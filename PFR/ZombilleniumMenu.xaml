@@ -17,10 +17,14 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Border Grid.Row="0" Background="Aquamarine">
-            <Label Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="24" >Que voulez vous faire ?</Label>
+        <Border Grid.Row="0" Background="LightBlue">
+            <Label Style="{StaticResource titleLabelChoice}" >Que voulez vous faire ?</Label>
         </Border>
+
+        <StackPanel Grid.Row="1">
+            <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Afficher_Personnel">Afficher Personnel</Button>
+        </StackPanel>
         
-        
+            
     </Grid>
 </Page>

@@ -13,6 +13,6 @@
             <ImageBrush ImageSource="background.jpg"/>
         </Grid.Background>
 
-        <Button VerticalAlignment="Center" HorizontalAlignment="Center" Click="Button_Click" FontSize="32">Accéder !</Button>
+        <Button VerticalAlignment="Center" Style="{StaticResource buttonChoiceStyle}"  Click="Button_Click">Accéder !</Button>
     </Grid>
 </Page>

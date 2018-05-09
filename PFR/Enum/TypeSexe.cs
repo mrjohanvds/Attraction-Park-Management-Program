@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PFR
 {
-    enum TypeSexe
+    public enum TypeSexe
     {
         male,
         femelle,

@@ -12,10 +12,14 @@ namespace PFR
         private List<Attraction> attractions;
         private List<Personnel> toutLePersonnel;
 
-        public Administration (List<Attraction> desAttractions, List<Personnel> desPersonnels)
+        public List<Personnel> ToutLePersonnel { get => toutLePersonnel; set => toutLePersonnel = value; }
+
+        public Administration ()
         {
-            attractions = desAttractions;
-            toutLePersonnel = desPersonnels;
+            attractions = new List<Attraction>();
+            toutLePersonnel = new List<Personnel>();
+
+            LireFichier("Listing.csv");
         }
 
 

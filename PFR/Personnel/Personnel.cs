@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PFR
 {
-    class Personnel : IComparable<Personnel> 
+    public class Personnel : IComparable<Personnel> 
     {
         private string fonction;
         private int matricule;
