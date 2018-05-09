@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFR
 {
-    class Attraction
+    public class Attraction
     {
         private bool besoinSpecifique;
         private TimeSpan dureeMaintenance;

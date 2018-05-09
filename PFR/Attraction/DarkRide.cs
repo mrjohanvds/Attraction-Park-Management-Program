@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFR
 {
-    class DarkRide : Attraction
+    public class DarkRide : Attraction
     {
         private TimeSpan duree;
         private bool vehicule;

@@ -20,19 +20,17 @@ namespace PFR
     /// </summary>
     public partial class ZombilleniumViewPersonnel : Page
     {
-        private List<Personnel> personnels;
 
-        public ZombilleniumViewPersonnel(List<Personnel> desPersonnels)
+        public ZombilleniumViewPersonnel()
         {
             InitializeComponent();
-            personnels = desPersonnels;
 
         }
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
             var grid = sender as DataGrid;
-            grid.ItemsSource = personnels;
+            grid.ItemsSource = ZombilleniumMenu.Administration.ToutLePersonnel;
         }
     }
 }

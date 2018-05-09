@@ -8,10 +8,7 @@
       d:DesignHeight="750" d:DesignWidth="1300"
       Title="Zombillenium - Home">
 
-    <Grid Margin="5,0,5,5">
-        <Grid.Background>
-            <ImageBrush ImageSource="background.jpg"/>
-        </Grid.Background>
+    <Grid>
 
         <Button VerticalAlignment="Center" Style="{StaticResource buttonChoiceStyle}"  Click="Button_Click">Accéder !</Button>
     </Grid>

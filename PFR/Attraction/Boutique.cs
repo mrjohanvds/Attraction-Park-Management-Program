@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFR
 {
-    class Boutique : Attraction
+    public class Boutique : Attraction
     {
         private TypeBoutique type;
 

@@ -8,10 +8,7 @@
       d:DesignHeight="750" d:DesignWidth="1300"
       Title="Zombillenium - View Personnel">
 
-    <Grid Margin="5,0,5,5">
-        <Grid.Background>
-            <ImageBrush ImageSource="background.jpg"/>
-        </Grid.Background>
+    <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
@@ -19,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Background="LightBlue">
-            <Label Style="{StaticResource titleLabelChoice}">Liste du personnel</Label>
+            <Label Style="{StaticResource titleLabelStyle}">Liste du personnel</Label>
         </Border>
 
         <Grid Margin="50" Grid.Row="1">

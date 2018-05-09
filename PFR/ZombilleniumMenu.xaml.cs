@@ -20,17 +20,24 @@ namespace PFR
     /// </summary>
     public partial class ZombilleniumMenu : Page
     {
-        private Administration administration;
+        static private Administration administration;
         public ZombilleniumMenu()
         {
             InitializeComponent();
             administration = new Administration();
         }
 
+        public static Administration Administration { get => administration; set => administration = value; }
+
         private void Button_Click_Afficher_Personnel(object sender, RoutedEventArgs e)
         {
-            ZombilleniumViewPersonnel zombilleniumViewPersonnel = new ZombilleniumViewPersonnel(administration.ToutLePersonnel);
+            ZombilleniumViewPersonnel zombilleniumViewPersonnel = new ZombilleniumViewPersonnel();
             this.NavigationService.Navigate(zombilleniumViewPersonnel);
+        }
+        private void Button_Click_Ajouter_Personnel(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumAddPersonnel zombilleniumAddPersonnel = new ZombilleniumAddPersonnel();
+            this.NavigationService.Navigate(zombilleniumAddPersonnel);
         }
     }
 }

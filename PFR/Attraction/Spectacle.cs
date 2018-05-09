@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFR
 {
-    class Spectacle :Attraction
+    public class Spectacle :Attraction
     {
         private List<DateTime> horaire;
         private int nombrePlace;

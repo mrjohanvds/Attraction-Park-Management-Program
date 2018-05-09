@@ -24,7 +24,7 @@ namespace PFR
         }
 
         #region Accesseur
-
+        
         public string Nom
         {
             get { return nom; }
@@ -33,13 +33,17 @@ namespace PFR
         {
             get { return prenom; }
         }
+        public int Matricule
+        {
+            get { return matricule; }
+        }
         public TypeSexe Sexe
         {
             get { return sexe; }
         }
-        public int Matricule
+        public string Fonction
         {
-            get { return matricule; }
+            get { return fonction; }
         }
 
         #endregion

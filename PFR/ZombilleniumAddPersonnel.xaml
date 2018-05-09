@@ -1,0 +1,57 @@
+﻿<Page x:Class="PFR.ZombilleniumAddPersonnel"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PFR"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Zombillenium - Add Personnel">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="LightBlue">
+            <Label Style="{StaticResource titleLabelStyle}">Ajout d'un membre dans le personnel</Label>
+        </Border>
+
+        <Grid Margin="20" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+            </Grid.RowDefinitions>
+
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="0">Nom :</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="1">Prenom :</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="2">Matricule :</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="3">Sexe :</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="4">Fonction :</Label>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="0" Name="NameTextBox"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="1" Name="FirstNameTextBox"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="2" Name="MatriculeTextBox"/>
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
+                <RadioButton Content="femelle" GroupName="SexeRadioButton" Grid.Column="0" Checked="Femelle_RadioButton_Checked"/>
+                <RadioButton Content="male" GroupName="SexeRadioButton" Grid.Column="1" Checked="Male_RadioButton_Checked"/>
+                <RadioButton Content="autre" GroupName="SexeRadioButton" Grid.Column="2" Checked="Autre_RadioButton_Checked"/>
+            </StackPanel>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="FunctionTextBox"/>
+        </Grid>
+        <Label Name="ValidationLabel" Grid.Row="2" Style="{StaticResource titleLabelStyle}" Background="LightBlue"/>
+        <Button Style="{StaticResource buttonChoiceStyle}" Name="ValidationButton" Grid.Row="3" Click="Click_Button_Validation">Valider !</Button>
+        
+        
+        
+    </Grid>
+</Page>

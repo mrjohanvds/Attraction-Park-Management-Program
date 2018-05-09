@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PFR
 {
-    class Monstre : Personnel
+    public class Monstre : Personnel
     {
         private Attraction affectation;
         private int cagnotte;

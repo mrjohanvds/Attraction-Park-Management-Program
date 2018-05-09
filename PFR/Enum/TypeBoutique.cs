@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PFR
 {
-    enum TypeBoutique
+    public enum TypeBoutique
     {
         souvenir,
         barbeAPapa,

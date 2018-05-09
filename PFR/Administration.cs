@@ -7,7 +7,7 @@ using System.IO;
 
 namespace PFR
 {
-    class Administration
+    public class Administration
     {
         private List<Attraction> attractions;
         private List<Personnel> toutLePersonnel;
