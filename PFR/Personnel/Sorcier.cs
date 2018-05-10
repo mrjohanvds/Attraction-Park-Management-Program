@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PFR
 {
-    class Sorcier : Personnel
+    public class Sorcier : Personnel
     {
         private List<string> pouvoirs;
         private Grade tatouage;

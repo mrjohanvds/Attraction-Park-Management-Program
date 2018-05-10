@@ -13,6 +13,7 @@ namespace PFR
         private List<Personnel> toutLePersonnel;
 
         public List<Personnel> ToutLePersonnel { get => toutLePersonnel; set => toutLePersonnel = value; }
+        public List<Attraction> Attractions { get => attractions; set => attractions = value; }
 
         public Administration ()
         {
@@ -146,6 +147,20 @@ namespace PFR
             StreamWriter fichEcr = new StreamWriter(nomFichier, true);
             fichEcr.Write(texte);
             fichEcr.Close();
+        }
+
+        public int ChercherIndexNomAttraction(string nom)
+        {
+            int compteur = 0;
+            foreach (Attraction a in attractions)
+            {
+                if (nom.ToLower() == a.Nom.ToLower())
+                {
+                    return compteur; //On renvoie l'index de l'attraction dans la liste
+                }
+                compteur++;
+            }
+            return -1;
         }
 
         public int ChercherAttraction(int id) 

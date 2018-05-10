@@ -11,7 +11,8 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
-            <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
@@ -19,8 +20,17 @@
         <Border Grid.Row="0" Background="LightBlue">
             <Label Style="{StaticResource titleLabelStyle}">Ajout d'un membre dans le personnel</Label>
         </Border>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Name="TypeSP">
+            <RadioButton Content="Monstre" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Checked"/>
+            <RadioButton Content="Demon" GroupName="TypeRadioButton" Checked="Demon_RadioButton_Checked" Unchecked="Demon_RadioButton_Unchecked"/>
+            <RadioButton Content="Fantome" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>
+            <RadioButton Content="Loup Garou" GroupName="TypeRadioButton" Checked="LoupGarou_RadioButton_Checked" Unchecked="LoupGarou_RadioButton_Unchecked"/>
+            <RadioButton Content="Vampire" GroupName="TypeRadioButton" Checked="Vampire_RadioButton_Checked" Unchecked="Vampire_RadioButton_Unchecked"/>
+            <RadioButton Content="Zombie" GroupName="TypeRadioButton" Checked="Zombie_RadioButton_Checked" Unchecked="Zombie_RadioButton_Unchecked"/>
+            <RadioButton Content="Sorcier" GroupName="TypeRadioButton" Checked="Sorcier_RadioButton_Checked" Unchecked="Sorcier_RadioButton_Unchecked"/>
+        </StackPanel>
 
-        <Grid Margin="20" Grid.Row="1">
+        <Grid Margin="20" Grid.Row="3" Name="InfosGeneralesGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -41,15 +51,82 @@
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="0" Name="NameTextBox"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="1" Name="FirstNameTextBox"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="2" Name="MatriculeTextBox"/>
-            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal">
-                <RadioButton Content="femelle" GroupName="SexeRadioButton" Grid.Column="0" Checked="Femelle_RadioButton_Checked"/>
-                <RadioButton Content="male" GroupName="SexeRadioButton" Grid.Column="1" Checked="Male_RadioButton_Checked"/>
-                <RadioButton Content="autre" GroupName="SexeRadioButton" Grid.Column="2" Checked="Autre_RadioButton_Checked"/>
+            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" Name="SexeSP">
+                <RadioButton Content="femelle" GroupName="SexeRadioButton"/>
+                <RadioButton Content="male" GroupName="SexeRadioButton"/>
+                <RadioButton Content="autre" GroupName="SexeRadioButton"/>
             </StackPanel>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="FunctionTextBox"/>
         </Grid>
-        <Label Name="ValidationLabel" Grid.Row="2" Style="{StaticResource titleLabelStyle}" Background="LightBlue"/>
-        <Button Style="{StaticResource buttonChoiceStyle}" Name="ValidationButton" Grid.Row="3" Click="Click_Button_Validation">Valider !</Button>
+
+
+
+        <StackPanel Grid.Row="2">
+
+            <StackPanel Grid.Row="2" Visibility="Collapsed" Name="SorcierSP">
+                <StackPanel Orientation="Horizontal" Name="GradeSP" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Grade :</Label>
+                    <RadioButton Content="novice" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="mega" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="giga" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="strata" GroupName="GradeRadioButton"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Name="Pouvoirs" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Pouvoirs :</Label>
+                    <TextBox Name="PouvoirsTB" Style="{StaticResource textBoxStyle}"></TextBox>
+                    <Button Name="AjoutPouvoir" Content="Ajouter" Click="AjoutPouvoir_Button_Click"/>
+                </StackPanel>
+                <Label Name="ListPouvoirLabel" FontWeight="Bold" HorizontalAlignment="Center">La liste des pouvoirs :</Label>
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Visibility="Collapsed" Name="MonstreSP">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Cagnotte :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="CagnotteTB"></TextBox>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Attraction :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="AttractionTB"></TextBox>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Visibility="Collapsed" Name="DemonSP">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Force :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="ForceTB"></TextBox>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Visibility="Collapsed" Name="LoupGarouSP">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Indice de Cruauté :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="IndiceCruauteTB"></TextBox>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Visibility="Collapsed" Name="VampireSP">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Indice de Luminosité :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="IndiceLuminositeTB"></TextBox>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Visibility="Collapsed" Name="ZombieSP">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="TeintSP">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Teint :</Label>
+                    <RadioButton Content="Bleuatre" GroupName="TeintRadioButton"/>
+                    <RadioButton Content="Grisatre" GroupName="TeintRadioButton"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Degrée de Décomposition :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="DegreDecompositionTB"></TextBox>
+                </StackPanel>
+            </StackPanel>
+            
+        </StackPanel>
+        
+        <Label Name="ValidationLabel" Grid.Row="4" Style="{StaticResource titleLabelStyle}" Background="LightBlue" HorizontalAlignment="Right"/>
+        <Button Style="{StaticResource buttonChoiceStyle}" Name="ValidationButton" Grid.Row="4" Click="Click_Button_Validation">Valider !</Button>
         
         
         

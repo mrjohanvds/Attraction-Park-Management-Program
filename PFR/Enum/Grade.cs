@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PFR
 {
-    enum Grade
+    public enum Grade
     {
         novice,
         mega,
