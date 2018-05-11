@@ -143,5 +143,16 @@
   <ItemGroup>
     <Resource Include="background.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="fantome.png" />
+    <Resource Include="loupgarou.png" />
+    <Resource Include="monstre.png" />
+    <Resource Include="sorcier.jpg" />
+    <Resource Include="vampire.gif" />
+    <Resource Include="zombie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="demon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
