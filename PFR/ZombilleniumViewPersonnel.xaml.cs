@@ -29,8 +29,17 @@ namespace PFR
 
         private void DataGrid_Loaded(object sender, RoutedEventArgs e)
         {
+            List<Monstre> monstres = new List<Monstre> ();
+            foreach (Personnel lambda in ZombilleniumMenu.Administration.ToutLePersonnel)
+            {
+                if (lambda is Monstre)
+                    {
+                     monstres.Add (lambda as Monstre);
+                    }
+
+            }
             var grid = sender as DataGrid;
-            grid.ItemsSource = ZombilleniumMenu.Administration.ToutLePersonnel;
+            grid.ItemsSource = monstres;
         }
     }
 }

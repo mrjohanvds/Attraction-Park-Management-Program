@@ -21,6 +21,7 @@
         <StackPanel Grid.Row="1">
             <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Afficher_Personnel">Afficher Personnel</Button>
             <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Ajouter_Personnel">Ajouter Personnel</Button>
+          
         </StackPanel>
         
             
