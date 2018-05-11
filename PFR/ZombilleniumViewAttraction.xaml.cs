@@ -40,10 +40,6 @@ namespace PFR
 
             foreach (Attraction attraction in attractions)
             {
-                if (attraction is Attraction)
-                {
-                    attractions.Add(attraction as Attraction);
-                }
                 if (attraction is Boutique)
                 {
                     boutiques.Add(attraction as Boutique);
@@ -63,5 +59,70 @@ namespace PFR
                 
             }
         }
+
+        
+        private void ToutAttractionDG_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            grid.ItemsSource = attractions;
+        }
+
+        private void BoutiqueDG_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            grid.ItemsSource = boutiques;
+        }
+
+        private void DarkRideDG_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            grid.ItemsSource = darkRides;
+        }
+
+        private void RollerCoasterDG_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            grid.ItemsSource = rollerCoasters;
+        }
+
+        private void SpectacleDG_Loaded(object sender, RoutedEventArgs e)
+        {
+            var grid = sender as DataGrid;
+            grid.ItemsSource = spectacles;
+        }
+
+        private void typeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var comboBox = sender as ComboBox;
+            AllHidden();
+            switch (comboBox.SelectedIndex)
+            {
+                case 0:
+                    AllHidden(); ToutAttractionDG.Visibility = Visibility.Visible;
+                    break;
+                case 1:
+                    AllHidden(); BoutiqueDG.Visibility = Visibility.Visible;
+                    break;
+                case 2:
+                    AllHidden(); DarkRideDG.Visibility = Visibility.Visible;
+                    break;
+                case 3:
+                    AllHidden(); RollerCoasterDG.Visibility = Visibility.Visible;
+                    break;
+                case 4:
+                    AllHidden(); SpectacleDG.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
+
+        private void AllHidden()
+        {
+            ToutAttractionDG.Visibility = Visibility.Hidden;
+            BoutiqueDG.Visibility = Visibility.Hidden;
+            DarkRideDG.Visibility = Visibility.Hidden;
+            RollerCoasterDG.Visibility = Visibility.Hidden;
+            SpectacleDG.Visibility = Visibility.Hidden;
+        }
+
     }
 }

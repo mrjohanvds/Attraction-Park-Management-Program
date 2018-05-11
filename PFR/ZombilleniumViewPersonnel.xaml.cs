@@ -76,51 +76,46 @@ namespace PFR
             }
         }
 
+        #region Loaded Events
+
         private void ToutPersoDG_Loaded(object sender, RoutedEventArgs e)
         {
-            //var toutLePersonnel = ZombilleniumMenu.Administration.ToutLePersonnel;
             var grid = sender as DataGrid;
             grid.ItemsSource = toutLePersonnel;
         }
 
         private void MonstreDG_Loaded(object sender, RoutedEventArgs e)
         {
-            //var monstres = ZombilleniumMenu.Administration.ToutLePersonnel.Cast<Monstre>();
             var grid = sender as DataGrid;
             grid.ItemsSource = monstres;
         }
 
         private void SorcierDG_Loaded(object sender, RoutedEventArgs e)
         { 
-            //var sorciers = ZombilleniumMenu.Administration.ToutLePersonnel.Cast<Sorcier>();
             var grid = sender as DataGrid;
             grid.ItemsSource = sorciers;
         }
 
         private void VampireDG_Loaded(object sender, RoutedEventArgs e)
         {
-            //var vampires = ZombilleniumMenu.Administration.ToutLePersonnel.Cast<Vampire>();
             var grid = sender as DataGrid;
             grid.ItemsSource = vampires;
         }
 
         private void ZombieDG_Loaded(object sender, RoutedEventArgs e)
         {
-            //var zombies = ZombilleniumMenu.Administration.ToutLePersonnel.Cast<Zombie>();
             var grid = sender as DataGrid;
             grid.ItemsSource = zombies;
         }
 
         private void DemonDG_Loaded(object sender, RoutedEventArgs e)
         {
-            //var demons = ZombilleniumMenu.Administration.ToutLePersonnel.Cast<Demon>();
             var grid = sender as DataGrid;
             grid.ItemsSource = demons;
         }
 
         private void FantomeDG_Loaded(object sender, RoutedEventArgs e)
         {
-            //var fantomes = ZombilleniumMenu.Administration.ToutLePersonnel.Cast<Fantome>();
             var grid = sender as DataGrid;
             grid.ItemsSource = fantomes;
         }
@@ -131,6 +126,7 @@ namespace PFR
             grid.ItemsSource = loupGarous;
         }
 
+        #endregion
 
         private void typeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

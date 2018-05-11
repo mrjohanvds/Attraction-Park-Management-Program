@@ -67,7 +67,7 @@
             </ComboBoxItem>
         </ComboBox>
 
-        <Grid Margin="50" Grid.Row="1">
+        <Grid Margin="50" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
             <DataGrid Name="ToutPersoDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Visible" Loaded="ToutPersoDG_Loaded" />
             <DataGrid Name="MonstreDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="MonstreDG_Loaded" />
             <DataGrid Name="SorcierDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="SorcierDG_Loaded" />
