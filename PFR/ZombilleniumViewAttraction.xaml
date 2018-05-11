@@ -1,0 +1,51 @@
+﻿<Page x:Class="PFR.ZombilleniumViewAttraction"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PFR"
+        mc:Ignorable="d"
+        Title="ZombilleniumViewAttraction" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Background="LightBlue">
+            <Label Style="{StaticResource titleLabelStyle}">Liste des Attractions</Label>
+        </Border>
+
+        <ComboBox Name="typeCB" Height="40" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="typeCB_SelectionChanged">
+            <ComboBoxItem>
+                <TextBlock Style="{StaticResource textComboStyle}">---Toutes les Attractions---</TextBlock>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="market-store-icon.jpeg"/>
+                    <TextBlock Style="{StaticResource textComboStyle}">Boutique</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="darkride.jpg"/>
+                    <TextBlock Style="{StaticResource textComboStyle}">DarkRide</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="rollercoaster.png"/>
+                    <TextBlock Style="{StaticResource textComboStyle}">RollerCoaster</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+            <ComboBoxItem>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="spectacle.png"/>
+                    <TextBlock Style="{StaticResource textComboStyle}">Spectacle</TextBlock>
+                </StackPanel>
+            </ComboBoxItem>
+           
+        </ComboBox>
+
+    </Grid>
+</Page>

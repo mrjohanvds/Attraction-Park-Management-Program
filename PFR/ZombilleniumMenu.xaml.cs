@@ -39,5 +39,10 @@ namespace PFR
             ZombilleniumAddPersonnel zombilleniumAddPersonnel = new ZombilleniumAddPersonnel();
             this.NavigationService.Navigate(zombilleniumAddPersonnel);
         }
+
+        private void Button_Click_Afficher_Attraction(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
