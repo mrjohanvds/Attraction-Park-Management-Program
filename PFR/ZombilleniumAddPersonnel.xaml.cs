@@ -20,17 +20,23 @@ namespace PFR
     /// </summary>
     public partial class ZombilleniumAddPersonnel : Page
     {
+        private List<string> nomAttraction;
         private List<string> pouvoirs;
         private TypeSexe sexe;
         private string fonction;
         private int matricule;
         private string nom;
         private string prenom;
+        private int indexAttraction;
 
         public ZombilleniumAddPersonnel()
         {
             InitializeComponent();
             pouvoirs = new List<string>();
+            nomAttraction = new List<string>();
+            foreach (Attraction element in ZombilleniumMenu.Administration.Attractions)
+                nomAttraction.Add(element.Nom);
+            AttractionCB.ItemsSource = nomAttraction;
         }
 
         public void Click_Button_Validation(object sender, RoutedEventArgs e)
@@ -157,30 +163,26 @@ namespace PFR
         public void AjoutDemon()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            int indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(AttractionTB.Text);
             int force = Convert.ToInt32(ForceTB.Text);
-            ZombilleniumMenu.Administration.AjouterPersonnel(new Demon(force, ZombilleniumMenu.Administration.Attractions[ZombilleniumMenu.Administration.ChercherAttraction(indexAttraction)], cagnotte, fonction, matricule, nom, prenom, sexe));
+            ZombilleniumMenu.Administration.AjouterPersonnel(new Demon(force, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
         public void AjoutFantome()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            int indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(AttractionTB.Text);
-            ZombilleniumMenu.Administration.AjouterPersonnel(new Fantome(ZombilleniumMenu.Administration.Attractions[ZombilleniumMenu.Administration.ChercherAttraction(indexAttraction)], cagnotte, fonction, matricule, nom, prenom, sexe));
+            ZombilleniumMenu.Administration.AjouterPersonnel(new Fantome(ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
         public void AjoutLoupGarou()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            int indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(AttractionTB.Text);
             double cruaute = Convert.ToDouble(IndiceCruauteTB.Text);
-            ZombilleniumMenu.Administration.AjouterPersonnel(new LoupGarou(cruaute, ZombilleniumMenu.Administration.Attractions[ZombilleniumMenu.Administration.ChercherAttraction(indexAttraction)], cagnotte, fonction, matricule, nom, prenom, sexe));
+            ZombilleniumMenu.Administration.AjouterPersonnel(new LoupGarou(cruaute, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
         public void AjoutVampire()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            int indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(AttractionTB.Text);
             double luminosite = Convert.ToDouble(IndiceLuminositeTB.Text);
             ZombilleniumMenu.Administration.AjouterPersonnel(new Vampire(luminosite, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
@@ -188,21 +190,27 @@ namespace PFR
         public void AjoutZombie()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            int indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(AttractionTB.Text);
             var radios = GradeSP.Children.OfType<RadioButton>();
             RadioButton checkedRadio = radios.FirstOrDefault(rb => rb.GroupName == "GradeRadioButton" && rb.IsChecked == true);
             CouleurZ teint = (CouleurZ)Enum.Parse(typeof(CouleurZ), Convert.ToString(checkedRadio.Content).ToLower());
             int decompostion = Convert.ToInt32(DegreDecompositionTB.Text);
-            ZombilleniumMenu.Administration.AjouterPersonnel(new Zombie(decompostion, teint, ZombilleniumMenu.Administration.Attractions[ZombilleniumMenu.Administration.ChercherAttraction(indexAttraction)], cagnotte, fonction, matricule, nom, prenom, sexe));
+            ZombilleniumMenu.Administration.AjouterPersonnel(new Zombie(decompostion, teint, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
         public void AjoutMonstre()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            int indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(AttractionTB.Text);
-            ZombilleniumMenu.Administration.AjouterPersonnel(new Monstre(ZombilleniumMenu.Administration.Attractions[ZombilleniumMenu.Administration.ChercherAttraction(indexAttraction)], cagnotte, fonction, matricule, nom, prenom, sexe));
+            ZombilleniumMenu.Administration.AjouterPersonnel(new Monstre(ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
         #endregion
+
+        private void AttractionCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var comboBox = sender as ComboBox;
+            string value = comboBox.SelectedItem as string;
+            this.Title = value;
+            indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(value);
+        }
     }
 }

@@ -37,5 +37,16 @@
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0,0,5,0"/>
         </Style>
+
+        <Style TargetType="TextBlock" x:Key="textComboStyle">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="10,0,0,0"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        
+        <Style TargetType="Image" x:Key="imageComboStyle">
+            <Setter Property="Height" Value="30"/>
+            <Setter Property="Width" Value="30"/>
+        </Style>
     </Application.Resources>
 </Application>
