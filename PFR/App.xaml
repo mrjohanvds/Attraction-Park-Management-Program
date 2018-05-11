@@ -44,7 +44,7 @@
             <Setter Property="FontSize" Value="18"/>
         </Style>
         
-        <Style TargetType="Image" x:Key="imageComboStyle">
+        <Style TargetType="Image">
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="30"/>
         </Style>
