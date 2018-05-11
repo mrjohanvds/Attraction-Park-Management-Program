@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace PFR
 {
     /// <summary>
-    /// Logique d'interaction pour ZombilleniumViewPersonnel.xaml
+    /// Logique d'interactions pour ZombilleniumViewPersonnel.xaml
     /// </summary>
     public partial class ZombilleniumViewPersonnel : Page
     {
@@ -33,7 +33,6 @@ namespace PFR
         {
             InitializeComponent();
             typeCB.SelectedIndex = 0;
-            toutLePersonnel = new List<Personnel>();
             sorciers = new List<Sorcier>();
             demons = new List<Demon>();
             zombies = new List<Zombie>();
@@ -42,80 +41,38 @@ namespace PFR
             fantomes = new List<Fantome>();
             loupGarous = new List<LoupGarou>();
 
-            List<Personnel> listtemp = ZombilleniumMenu.Administration.ToutLePersonnel;
+            toutLePersonnel = ZombilleniumMenu.Administration.ToutLePersonnel;
 
-            for (int i = 0; i< ZombilleniumMenu.Administration.ToutLePersonnel.Count; i++)
+            foreach(Personnel personnel in toutLePersonnel)
             {
-                try
+                if (personnel is Sorcier)
                 {
-                    foreach (Sorcier element in listtemp)
-                    {
-                        toutLePersonnel.Add(element);
-                        sorciers.Add(element);
-                        listtemp.Remove(element);
-                    }
+                    sorciers.Add(personnel as Sorcier);
                 }
-                catch { }
-
-                try
+                if (personnel is Demon)
                 {
-                    foreach (Demon element in listtemp)
-                    {
-                        toutLePersonnel.Add(element);
-                        monstres.Add(element);
-                        demons.Add(element);
-                        listtemp.Remove(element);
-                    }
+                    demons.Add(personnel as Demon);
                 }
-                catch { }
-
-                try
+                if (personnel is Zombie)
                 {
-                    foreach (Fantome element in listtemp)
-                    {
-                        toutLePersonnel.Add(element);
-                        monstres.Add(element);
-                        fantomes.Add(element);
-                        listtemp.Remove(element);
-                    }
+                    zombies.Add(personnel as Zombie);
                 }
-                catch { }
-
-                try
+                if (personnel is Monstre)
                 {
-                    foreach (LoupGarou element in listtemp)
-                    {
-                        toutLePersonnel.Add(element);
-                        monstres.Add(element);
-                        loupGarous.Add(element);
-                        listtemp.Remove(element);
-                    }
+                    monstres.Add(personnel as Monstre);
                 }
-                catch { }
-
-                try
+                if (personnel is Vampire)
                 {
-                    foreach (Vampire element in listtemp)
-                    {
-                        toutLePersonnel.Add(element);
-                        monstres.Add(element);
-                        vampires.Add(element);
-                        listtemp.Remove(element);
-                    }
+                    vampires.Add(personnel as Vampire);
                 }
-                catch { }
-
-                try
+                if (personnel is Fantome)
                 {
-                    foreach (Zombie element in listtemp)
-                    {
-                        toutLePersonnel.Add(element);
-                        monstres.Add(element);
-                        zombies.Add(element);
-                        listtemp.Remove(element);
-                    }
+                    fantomes.Add(personnel as Fantome);
                 }
-                catch { }
+                if (personnel is LoupGarou)
+                {
+                    loupGarous.Add(personnel as LoupGarou);
+                }
             }
         }
 
