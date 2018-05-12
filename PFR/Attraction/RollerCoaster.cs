@@ -18,6 +18,10 @@ namespace PFR
             this.tailleMinimum = tailleMinimum;
         }
 
+        public int AgeMinimum { get => ageMinimum; set => ageMinimum = value; }
+        public double TailleMinimum { get => tailleMinimum; set => tailleMinimum = value; }
+        internal TypeCategorie Categorie { get => categorie; set => categorie = value; }
+
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 
         public override string EcrireFichiercsv()

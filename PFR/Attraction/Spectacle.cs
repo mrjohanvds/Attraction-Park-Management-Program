@@ -17,6 +17,10 @@ namespace PFR
             this.nomSalle = nomSalle;
         }
 
+        public string NomSalle { get { return nomSalle;} }
+        public int NombrePlace { get { return nombrePlace; } }
+        public List<DateTime> Horaire { get { return horaire; } }
+
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 
         public override string EcrireFichiercsv()

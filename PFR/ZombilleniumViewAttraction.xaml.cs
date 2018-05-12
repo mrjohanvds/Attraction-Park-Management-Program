@@ -91,7 +91,7 @@ namespace PFR
             grid.ItemsSource = spectacles;
         }
 
-        private void typeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TypeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var comboBox = sender as ComboBox;
             AllHidden();
@@ -117,6 +117,7 @@ namespace PFR
 
         private void AllHidden()
         {
+            
             ToutAttractionDG.Visibility = Visibility.Hidden;
             BoutiqueDG.Visibility = Visibility.Hidden;
             DarkRideDG.Visibility = Visibility.Hidden;

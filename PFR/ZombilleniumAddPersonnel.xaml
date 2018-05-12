@@ -21,7 +21,7 @@
             <Label Style="{StaticResource titleLabelStyle}">Ajout d'un membre dans le personnel</Label>
         </Border>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Name="TypeSP">
-            <RadioButton Content="Monstre" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Checked"/>
+            <RadioButton Content="Monstre" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>
             <RadioButton Content="Demon" GroupName="TypeRadioButton" Checked="Demon_RadioButton_Checked" Unchecked="Demon_RadioButton_Unchecked"/>
             <RadioButton Content="Fantome" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>
             <RadioButton Content="Loup Garou" GroupName="TypeRadioButton" Checked="LoupGarou_RadioButton_Checked" Unchecked="LoupGarou_RadioButton_Unchecked"/>

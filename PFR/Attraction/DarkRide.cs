@@ -15,6 +15,9 @@ namespace PFR
             this.vehicule = vehicule;
         }
 
+        public TimeSpan Duree { get => duree; set => duree = value; }
+        public bool Vehicule { get => vehicule; set => vehicule = value; }
+
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 
         public override string EcrireFichiercsv()

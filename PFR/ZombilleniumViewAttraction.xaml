@@ -16,7 +16,7 @@
             <Label Style="{StaticResource titleLabelStyle}">Liste des Attractions</Label>
         </Border>
 
-        <ComboBox Name="typeCB" Height="40" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="typeCB_SelectionChanged">
+        <ComboBox Name="typeCB" Height="40" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="TypeCB_SelectionChanged">
             <ComboBoxItem>
                 <TextBlock Style="{StaticResource textComboStyle}">---Toutes les Attractions---</TextBlock>
             </ComboBoxItem>
@@ -44,7 +44,7 @@
                     <TextBlock Style="{StaticResource textComboStyle}">Spectacle</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
-           
+
         </ComboBox>
 
         <Grid Margin="50" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
@@ -54,6 +54,6 @@
             <DataGrid Name="RollerCoasterDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="RollerCoasterDG_Loaded" />
             <DataGrid Name="SpectacleDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="SpectacleDG_Loaded" />
         </Grid>
-        
+
     </Grid>
 </Page>

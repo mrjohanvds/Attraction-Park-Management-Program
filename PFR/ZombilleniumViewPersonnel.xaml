@@ -19,7 +19,7 @@
             <Label Style="{StaticResource titleLabelStyle}">Liste du personnel</Label>
         </Border>
 
-        <ComboBox Name="typeCB" Height="40" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="typeCB_SelectionChanged">
+        <ComboBox Name="typeCB" Height="40" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="TypeCB_SelectionChanged">
             <ComboBoxItem>
                 <TextBlock Style="{StaticResource textComboStyle}">---Tout le personnel---</TextBlock>
             </ComboBoxItem>

@@ -128,7 +128,7 @@ namespace PFR
 
         #endregion
 
-        private void typeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void TypeCB_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var comboBox = sender as ComboBox;
             AllHidden();

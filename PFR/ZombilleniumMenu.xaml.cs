@@ -45,5 +45,11 @@ namespace PFR
             ZombilleniumViewAttraction zombilleniumViewAttraction = new ZombilleniumViewAttraction();
             this.NavigationService.Navigate(zombilleniumViewAttraction);
         }
+        private void Button_Click_Ajouter_Attraction(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumAddAttraction zombilleniumAddAttraction = new ZombilleniumAddAttraction();
+            this.NavigationService.Navigate(zombilleniumAddAttraction);
+        }
+
     }
 }

@@ -73,6 +73,9 @@
     <Compile Include="Personnel\Sorcier.cs" />
     <Compile Include="Personnel\Vampire.cs" />
     <Compile Include="Personnel\Zombie.cs" />
+    <Compile Include="ZombilleniumAddAttraction.xaml.cs">
+      <DependentUpon>ZombilleniumAddAttraction.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ZombilleniumAddPersonnel.xaml.cs">
       <DependentUpon>ZombilleniumAddPersonnel.xaml</DependentUpon>
     </Compile>
@@ -100,6 +103,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ZombilleniumAddAttraction.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ZombilleniumAddPersonnel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
