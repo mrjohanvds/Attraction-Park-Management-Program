@@ -20,40 +20,49 @@
             <Label Style="{StaticResource titleLabelStyle}" Content="Ajouter une attraction"/>
         </Border>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Name="TypeSP">
-            <RadioButton Content="Boutique" GroupName="TypeRadioButton" Checked="Boutique_RadioButton_Checked" Unchecked="Boutique_RadioButton_Unchecked"/>
             <RadioButton Content="DarkRide" GroupName="TypeRadioButton" Checked="DarkRide_RadioButton_Checked" Unchecked="DarkRide_RadioButton_Unchecked"/>
             <RadioButton Content="RollerCoaster" GroupName="TypeRadioButton" Checked="RollerCoaster_RadioButton_Checked" Unchecked="RollerCoaster_RadioButton_Unchecked"/>
             <RadioButton Content="Spectacle" GroupName="TypeRadioButton" Checked="Spectacle_RadioButton_Checked" Unchecked="Spectacle_RadioButton_Unchecked"/>
         </StackPanel>
 
-        <Grid Margin="30,20,10,20" Grid.Row="3" Name="InfosGeneralesGrid">
+        <Grid Margin="30,2,10,20" Grid.Row="3" Name="InfosGeneralesGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Column="1" Grid.Row="0" Orientation="Horizontal" Name="BesoinSpécifique">
+            <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Name="BesoinSpécifique">
                 <RadioButton Content="oui" GroupName="BesoinSpécifiqueButton"/>
                 <RadioButton Content="non" GroupName="BesoinSpécifiqueButton"/>
-
+                
             </StackPanel>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="0">Besoin spécifique :</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="3">Nom:</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="1">Durée Maintenance:</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="2">Matricule :</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="4">Fonction :</Label>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="3" Name="NameTextBox"/>
-          
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="2" Name="MatriculeTextBox"/>
-
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="2">Besoin spécifique :</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="3">type de besoin :</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="1">Nom:</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="9">Durée Maintenance:</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="4">equipe:</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="0">identifiant:</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="7">maintenance:</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="8">Nature de maintenance:</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="5">Nombre de monstre:</Label>
+            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="6">ouvert:</Label>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="0" Name="indentifianttextbox"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="1" Name="nomTextBox"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="3" Name="Typedebesoin"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="FunctionTextBox"/>
-            <DatePicker HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,2.8,0,0" Grid.Column="1" Grid.Row="1"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="5" Name="nombredemontre"/>
+
         </Grid>
 
     </Grid>

@@ -23,6 +23,7 @@
             <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Ajouter_Personnel">Ajouter Personnel</Button>
             <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Afficher_Attraction">Afficher Attraction</Button>
             <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Ajouter_Attraction">Ajouter  Attraction</Button>
+            <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Ajouter_Attraction">Evolution</Button>
         </StackPanel>
         
             
