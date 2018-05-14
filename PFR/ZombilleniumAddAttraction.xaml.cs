@@ -34,9 +34,52 @@ namespace PFR
         public ZombilleniumAddAttraction()
         {
             InitializeComponent();
+            equipe = new List<Monstre>();
+
 
         }
-        private void DarkRide_RadioButton_Checked(object sender, RoutedEventArgs e)
+        public void Click_Button_Validation(object sender, RoutedEventArgs e)
+        {
+            var radios = BesoinSpécifique.Children.OfType<RadioButton>();
+            RadioButton checkedRadio = radios.FirstOrDefault(rb => rb.GroupName == "BesoinSpécifiqueButton" && rb.IsChecked == true);
+            besoinSpecifique = bool.Parse(checkedRadio.Content.ToString());
+
+            var radios1 = Maintenance.Children.OfType<RadioButton>();
+            RadioButton checkedRadio1 = radios.FirstOrDefault(rb => rb.GroupName == "Maintenance" && rb.IsChecked == true);
+            maintenance = bool.Parse(checkedRadio.Content.ToString());
+
+            var radios2 = Ouvert.Children.OfType<RadioButton>();
+            RadioButton checkedRadio2 = radios.FirstOrDefault(rb => rb.GroupName == "Ouvert" && rb.IsChecked == true);
+            ouvert = bool.Parse(checkedRadio.Content.ToString());
+
+            identifiant = Convert.ToInt32(indentifianttextbox.Text);
+            nbMinMonstre = Convert.ToInt32(nombredemontre.Text);
+
+            typeDeBesoin = Typedebesoin.Text;
+            nom = Nom.Text;
+            natureMaintenance = NatureDeMaintenance.Text;
+
+            var radios4 = TypeSP.Children.OfType<RadioButton>();
+            RadioButton checkedRadio4 = radios4.FirstOrDefault(rb => rb.GroupName == "TypeRadioButton" && rb.IsChecked == true);
+            switch (checkedRadio1.Content)
+            {
+                case "DarkRide":
+                    AjoutDarkRide();
+                    break;
+                case "RollerCoaster":
+                    AjoutRollerCoaster();
+                    break;
+                case "Boutique":
+                    AjoutBoutique();
+                    break;
+                case "Spectacle":
+                    AjoutBoutique();
+                    break;
+
+            }
+
+        }
+            private void DarkRide_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
 
 

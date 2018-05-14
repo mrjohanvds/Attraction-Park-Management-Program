@@ -51,6 +51,11 @@
                     <RadioButton Content="non" GroupName="ouvert"/>
 
                 </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="7" Orientation="Horizontal" Name="Maintenance">
+                <RadioButton Content="oui" GroupName="Maintenance"/>
+                <RadioButton Content="non" GroupName="Maintenance"/>
+
+            </StackPanel>
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="2">Besoin spécifique :</Label>
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="3">type de besoin :</Label>
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="1">Nom:</Label>
@@ -66,7 +71,6 @@
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="3" Name="Typedebesoin"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="équipe"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="5" Name="nombredemontre"/>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="7" Name="Maintenance"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="8" Name="NatureDeMaintenance"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="9" Name="DuréeMaintenance"/>
         </Grid>
