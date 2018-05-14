@@ -69,7 +69,7 @@ namespace PFR
             return base.ToString().Split('.')[1] + ';' + identifiant + ';' + nom + ';' + nbMinMonstre + ';' + besoinSpecifique + ';' + typeDeBesoin;
         }
 
-        public void changementMaintenance(bool uneMaitenance, string uneNatureMaintenance, TimeSpan uneDuree)
+        public void ChangementMaintenance(bool uneMaitenance, string uneNatureMaintenance, TimeSpan uneDuree)
         {
                 maintenance = uneMaitenance;
                 natureMaintenance = uneNatureMaintenance;

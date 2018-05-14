@@ -20,7 +20,7 @@ namespace PFR
 
         public int AgeMinimum { get => ageMinimum; set => ageMinimum = value; }
         public double TailleMinimum { get => tailleMinimum; set => tailleMinimum = value; }
-        internal TypeCategorie Categorie { get => categorie; set => categorie = value; }
+        public TypeCategorie Categorie { get => categorie; set => categorie = value; }
 
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 

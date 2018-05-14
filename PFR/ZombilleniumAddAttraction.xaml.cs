@@ -39,6 +39,7 @@ namespace PFR
         private void DarkRide_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
 
+
         }
         private void DarkRide_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {

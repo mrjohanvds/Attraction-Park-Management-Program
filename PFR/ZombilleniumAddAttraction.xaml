@@ -10,11 +10,11 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Border Grid.Row="0" Background="LightBlue">
             <Label Style="{StaticResource titleLabelStyle}" Content="Ajouter une attraction"/>
@@ -45,8 +45,12 @@
             <StackPanel Grid.Column="1" Grid.Row="2" Orientation="Horizontal" Name="BesoinSpécifique">
                 <RadioButton Content="oui" GroupName="BesoinSpécifiqueButton"/>
                 <RadioButton Content="non" GroupName="BesoinSpécifiqueButton"/>
-                
             </StackPanel>
+            <StackPanel Grid.Column="1" Grid.Row="6" Orientation="Horizontal" Name="Ouvert">
+                    <RadioButton Content="oui" GroupName="ouvert"/>
+                    <RadioButton Content="non" GroupName="ouvert"/>
+
+                </StackPanel>
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="2">Besoin spécifique :</Label>
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="3">type de besoin :</Label>
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="1">Nom:</Label>
@@ -58,12 +62,75 @@
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="5">Nombre de monstre:</Label>
             <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="6">ouvert:</Label>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="0" Name="indentifianttextbox"/>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="1" Name="nomTextBox"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="1" Name="Nom"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="3" Name="Typedebesoin"/>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="FunctionTextBox"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="équipe"/>
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="5" Name="nombredemontre"/>
-
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="7" Name="Maintenance"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="8" Name="NatureDeMaintenance"/>
+            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="9" Name="DuréeMaintenance"/>
         </Grid>
+        
+        
+        
+        <StackPanel Grid.Row="2">
+
+            <StackPanel Grid.Row="2" Visibility="Collapsed" Name="DarkrideSP">
+                <StackPanel Orientation="Horizontal" Name="durée" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Durée :</Label>
+                    <RadioButton Content="10 min" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="15 min" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="30 min" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="45 min" GroupName="GradeRadioButton"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Name="Vehicule" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Vehicule :</Label>
+                    <RadioButton Content="oui" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="non" GroupName="GradeRadioButton"/>
+                </StackPanel>
+                
+            </StackPanel>
+
+            <StackPanel Grid.Row="2" Visibility="Collapsed" Name="RollerCoasterSP">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">AgeMin :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="AgeMin"></TextBox>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">TailleMin :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="taillemin"></TextBox>
+                    
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Categorie:</Label>
+                    <ComboBox Name="Categorie" MinWidth="100">
+                        <ComboBoxItem> bobsleigh</ComboBoxItem>
+                        <ComboBoxItem>assise</ComboBoxItem>
+                        <ComboBoxItem>inversee</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+
+           
+
+            <StackPanel Visibility="Collapsed" Name="SpectacleSP">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Nombre de Place:</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="Nombredeplace"></TextBox>
+                    <Label Style="{StaticResource textBoxLabelStyle}">nom Salle:</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="NomSalle"></TextBox>
+                    <Label Style="{StaticResource textBoxLabelStyle}">Horaire:</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="Horaire"></TextBox>
+                </StackPanel>
+            </StackPanel>
+
+           
+
+        </StackPanel>
+
+        <Label Name="ValidationLabel" Grid.Row="4" Style="{StaticResource titleLabelStyle}" Background="LightBlue" HorizontalAlignment="Right"/>
+        <Button Style="{StaticResource buttonChoiceStyle}" Name="ValidationButton" Grid.Row="4">Valider !</Button>
 
     </Grid>
 </Page>
