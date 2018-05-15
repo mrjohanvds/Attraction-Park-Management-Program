@@ -81,36 +81,36 @@ namespace PFR
         }
             private void DarkRide_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            DarkrideSP.Visibility = Visibility.Visible;
 
         }
         private void DarkRide_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-           
+            DarkrideSP.Visibility = Visibility.Collapsed;
         }
         private void Boutique_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            BoutiqueSP.Visibility = Visibility.Visible;
         }
         private void Boutique_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-
+            BoutiqueSP.Visibility = Visibility.Collapsed;
         }
         private void RollerCoaster_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            RollerCoasterSP.Visibility = Visibility.Visible;
         }
         private void RollerCoaster_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-
+            RollerCoasterSP.Visibility = Visibility.Collapsed;
         }
         private void Spectacle_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            SpectacleSP.Visibility = Visibility.Visible;
         }
         private void Spectacle_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-
+            SpectacleSP.Visibility = Visibility.Collapsed;
         }
 
     }
