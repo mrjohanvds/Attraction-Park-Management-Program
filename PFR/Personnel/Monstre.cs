@@ -10,11 +10,13 @@ namespace PFR
     {
         private Attraction affectation;
         private int cagnotte;
+        private string nomAttraction;
 
         public Monstre (Attraction uneAffectation, int uneCagnotte, string uneFonction, int unMatricule, string unNom, string unPrenom, TypeSexe unSexe) : base(uneFonction, unMatricule, unNom, unPrenom, unSexe)
         {
             affectation = uneAffectation;
             cagnotte = uneCagnotte;
+            nomAttraction = affectation.Nom;
         }
 
         #region Accesseur
@@ -22,11 +24,17 @@ namespace PFR
         public int Cagnotte
         {
             get { return cagnotte; }
+            set { cagnotte = value; }
         }
 
         public Attraction Affectation
         {
             set { affectation = value; }
+        }
+
+        public string NomAttraction
+        {
+            get { return nomAttraction; }
         }
 
         #endregion

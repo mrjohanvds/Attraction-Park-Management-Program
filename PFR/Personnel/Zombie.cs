@@ -17,6 +17,16 @@ namespace PFR
             teint = unTeint;
         }
 
+        #region accesseurs
+
+        public int DegreDecomposition
+        {
+            get { return degreDecomposition; }
+            set { degreDecomposition = value; }
+        }
+
+        #endregion
+
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 
         public override string EcrireFichiercsv()

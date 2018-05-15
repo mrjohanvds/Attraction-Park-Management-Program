@@ -15,6 +15,16 @@ namespace PFR
             indiceLuminosite = unIndiceLuminosite;
         }
 
+        #region accessseurs
+
+        public double IndiceLuminosite
+        {
+            get { return indiceLuminosite; }
+            set { indiceLuminosite = value; }
+        }
+
+        #endregion
+
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 
         public override string EcrireFichiercsv()

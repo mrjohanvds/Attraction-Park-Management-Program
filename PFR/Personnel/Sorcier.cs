@@ -10,12 +10,29 @@ namespace PFR
     {
         private List<string> pouvoirs;
         private Grade tatouage;
+        private string lesPouvoirs;
+
 
         public Sorcier(List<string> desPouvoirs, Grade unTatouage, string uneFonction, int unMatricule, string unNom, string unPrenom, TypeSexe unSexe) : base(uneFonction, unMatricule, unNom, unPrenom, unSexe)
         {
             pouvoirs = desPouvoirs;
             tatouage = unTatouage;
+            lesPouvoirs = ListToString();
         }
+
+        #region Accesseur
+        
+        public Grade Tatouage
+        {
+            get { return tatouage; }
+        }
+
+        public string LesPouvoirs
+        {
+            get { return lesPouvoirs; }
+        }
+
+        #endregion
 
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 
@@ -38,5 +55,21 @@ namespace PFR
                 phrase += " / " + element;
             return phrase + ". \n";
         }
+
+        private string ListToString()
+        {
+            string list = "";
+            foreach(string element in pouvoirs)
+            {
+                list += element;
+                if(pouvoirs.IndexOf(element) != pouvoirs.Count - 1)
+                {
+                    list += ",\n";
+                }
+            }
+            return list;
+        }
+
+
     }
 }
