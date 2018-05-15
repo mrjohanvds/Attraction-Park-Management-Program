@@ -61,8 +61,9 @@ namespace PFR
 
             var radios4 = TypeSP.Children.OfType<RadioButton>();
             RadioButton checkedRadio4 = radios4.FirstOrDefault(rb => rb.GroupName == "TypeRadioButton" && rb.IsChecked == true);
-            switch (checkedRadio1.Content)
+            switch (checkedRadio4.Content)
             {
+
                 case "DarkRide":
                     AjoutDarkRide();
                     break;
@@ -73,7 +74,7 @@ namespace PFR
                     AjoutBoutique();
                     break;
                 case "Spectacle":
-                    AjoutBoutique();
+                    AjoutSpectacle();
                     break;
 
             }
@@ -111,6 +112,23 @@ namespace PFR
         private void Spectacle_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
             SpectacleSP.Visibility = Visibility.Collapsed;
+        }
+
+        public void AjoutDarkRide ()
+        {
+
+        }
+        public void AjoutRollerCoaster()
+        {
+
+        }
+        public void AjoutBoutique()
+        {
+
+        }
+        public void AjoutSpectacle()
+        {
+
         }
 
     }
