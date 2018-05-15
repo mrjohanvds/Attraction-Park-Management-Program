@@ -15,6 +15,16 @@ namespace PFR
             indiceCruaute = unIndiceCruaute;
         }
 
+        #region accesseurs
+
+        public double IndiceCruaute
+        {
+            get { return indiceCruaute; }
+            set { indiceCruaute = value; }
+        }
+
+        #endregion
+
         /*-----------------------------------------------------------METHODES---------------------------------------------------------------*/
 
         public override string EcrireFichiercsv()

@@ -15,7 +15,7 @@ namespace PFR
             Force = uneForce;
         }
 
-        #region
+        #region accesseurs
 
         public int Force { get => force; set => force = value; }
 

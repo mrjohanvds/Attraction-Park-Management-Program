@@ -44,6 +44,7 @@ namespace PFR
         public string Fonction
         {
             get { return fonction; }
+            set { fonction = value; }
         }
 
         #endregion

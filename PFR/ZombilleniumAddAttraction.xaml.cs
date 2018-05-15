@@ -60,7 +60,7 @@ namespace PFR
             natureMaintenance = NatureDeMaintenance.Text;
 
             var radios4 = TypeSP.Children.OfType<RadioButton>();
-            RadioButton checkedRadio4 = radios4.FirstOrDefault(rb => rb.GroupName == "TypeRadioButton" && rb.IsChecked == true);
+            RadioButton checkedRadio4 = radios4.FirstOrDefault(rb => rb.GroupName == "TypeRadioButton" && rb.IsChecked == true);/*
             switch (checkedRadio1.Content)
             {
                 case "DarkRide":
@@ -76,7 +76,7 @@ namespace PFR
                     AjoutBoutique();
                     break;
 
-            }
+            }*/
 
         }
             private void DarkRide_RadioButton_Checked(object sender, RoutedEventArgs e)
