@@ -82,10 +82,10 @@
             <StackPanel Grid.Row="2" Visibility="Collapsed" Name="DarkrideSP">
                 <StackPanel Orientation="Horizontal" Name="durée" HorizontalAlignment="Center">
                     <Label Style="{StaticResource textBoxLabelStyle}">Durée :</Label>
-                    <RadioButton Content="10 min" GroupName="GradeRadioButton"/>
-                    <RadioButton Content="15 min" GroupName="GradeRadioButton"/>
-                    <RadioButton Content="30 min" GroupName="GradeRadioButton"/>
-                    <RadioButton Content="45 min" GroupName="GradeRadioButton"/>
+                    <RadioButton Content="10 " GroupName="GradeRadioButton"/>
+                    <RadioButton Content="15 " GroupName="GradeRadioButton"/>
+                    <RadioButton Content="30 " GroupName="GradeRadioButton"/>
+                    <RadioButton Content="45 "  GroupName="GradeRadioButton"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Name="Vehicule" HorizontalAlignment="Center">
                     <Label Style="{StaticResource textBoxLabelStyle}">Vehicule :</Label>
@@ -129,8 +129,19 @@
                 </StackPanel>
             </StackPanel>
 
-           
 
+            <StackPanel Grid.Row="2" Visibility="Collapsed" Name="BoutiqueSP">
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Label Style="{StaticResource textBoxLabelStyle}">Type boutique:</Label>
+                    <ComboBox Name="TypeBoutique" MinWidth="100">
+                        <ComboBoxItem>souvenir</ComboBoxItem>
+                        <ComboBoxItem>barbeAPapa</ComboBoxItem>
+                        <ComboBoxItem>nourriture</ComboBoxItem>
+                    </ComboBox>
+                </StackPanel>
+            </StackPanel>
+            
         </StackPanel>
 
         <Label Name="ValidationLabel" Grid.Row="4" Style="{StaticResource titleLabelStyle}" Background="LightBlue" HorizontalAlignment="Right"/>
