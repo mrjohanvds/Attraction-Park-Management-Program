@@ -69,17 +69,6 @@
             </ComboBoxItem>
         </ComboBox>
 
-        <!--Grid Margin="50" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Collapsed">
-            <DataGrid Name="ToutPersoDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Visible" Loaded="ToutPersoDG_Loaded" FontSize="16"/>
-            <DataGrid Name="MonstreDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="MonstreDG_Loaded" FontSize="16"/>
-            <DataGrid Name="SorcierDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="SorcierDG_Loaded" FontSize="16"/>
-            <DataGrid Name="DemonDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="DemonDG_Loaded" FontSize="16"/>
-            <DataGrid Name="FantomeDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="FantomeDG_Loaded" FontSize="16"/>
-            <DataGrid Name="LoupGarouDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="LoupGarouDG_Loaded" FontSize="16"/>
-            <DataGrid Name="VampireDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="VampireDG_Loaded" FontSize="16"/>
-            <DataGrid Name="ZombieDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="ZombieDG_Loaded" FontSize="16"/>
-        </-->
-
         <DataGrid Name="ToutPersoDG" Loaded="ToutPersoDG_Loaded" Visibility="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>

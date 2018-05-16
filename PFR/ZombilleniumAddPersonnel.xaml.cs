@@ -88,64 +88,80 @@ namespace PFR
         
         private void Sorcier_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            SorcierSP.Visibility = Visibility.Visible;
+            PouvoirsGrid.Visibility = Visibility.Visible;
+            GradeGrid.Visibility = Visibility.Visible;
+            ListPouvoirLabel.Visibility = Visibility.Visible;
         }
         private void Sorcier_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            SorcierSP.Visibility = Visibility.Collapsed;
+            PouvoirsGrid.Visibility = Visibility.Collapsed;
+            GradeGrid.Visibility = Visibility.Collapsed;
+            ListPouvoirLabel.Visibility = Visibility.Collapsed;
         }
 
         private void Demon_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Visible;
-            DemonSP.Visibility = Visibility.Visible;
+            CagnotteGrid.Visibility = Visibility.Visible;
+            AttractionGrid.Visibility = Visibility.Visible;
+            ForceGrid.Visibility = Visibility.Visible;
         }
         private void Demon_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Visible;
-            DemonSP.Visibility = Visibility.Collapsed;
+            CagnotteGrid.Visibility = Visibility.Collapsed;
+            AttractionGrid.Visibility = Visibility.Collapsed;
+            ForceGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Monstre_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Visible;
+            CagnotteGrid.Visibility = Visibility.Visible;
+            AttractionGrid.Visibility = Visibility.Visible;
         }
         private void Monstre_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Collapsed;
+            CagnotteGrid.Visibility = Visibility.Collapsed;
+            AttractionGrid.Visibility = Visibility.Collapsed;
         }
 
         private void LoupGarou_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Visible;
-            LoupGarouSP.Visibility = Visibility.Visible;
+            CagnotteGrid.Visibility = Visibility.Visible;
+            AttractionGrid.Visibility = Visibility.Visible;
+            CruauteGrid.Visibility = Visibility.Visible;
         }
         private void LoupGarou_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Collapsed;
-            LoupGarouSP.Visibility = Visibility.Collapsed;
+            CagnotteGrid.Visibility = Visibility.Collapsed;
+            AttractionGrid.Visibility = Visibility.Collapsed;
+            CruauteGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Vampire_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Visible;
-            VampireSP.Visibility = Visibility.Visible;
+            CagnotteGrid.Visibility = Visibility.Visible;
+            AttractionGrid.Visibility = Visibility.Visible;
+            LuminositeGrid.Visibility = Visibility.Visible;
         }
         private void Vampire_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Collapsed;
-            VampireSP.Visibility = Visibility.Collapsed;
+            CagnotteGrid.Visibility = Visibility.Collapsed;
+            AttractionGrid.Visibility = Visibility.Collapsed;
+            LuminositeGrid.Visibility = Visibility.Collapsed;
         }
 
         private void Zombie_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Visible;
-            ZombieSP.Visibility = Visibility.Visible;
+            CagnotteGrid.Visibility = Visibility.Visible;
+            AttractionGrid.Visibility = Visibility.Visible;
+            DecompositionGrid.Visibility = Visibility.Visible;
+            TeintGrid.Visibility = Visibility.Visible;
         }
         private void Zombie_RadioButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            MonstreSP.Visibility = Visibility.Collapsed;
-            ZombieSP.Visibility = Visibility.Collapsed;
+            CagnotteGrid.Visibility = Visibility.Collapsed;
+            AttractionGrid.Visibility = Visibility.Collapsed;
+            DecompositionGrid.Visibility = Visibility.Collapsed;
+            TeintGrid.Visibility = Visibility.Collapsed;
         }
 
         #endregion
@@ -163,7 +179,7 @@ namespace PFR
         public void AjoutDemon()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            int force = Convert.ToInt32(ForceTB.Text);
+            int force = Convert.ToInt32(ForceSlider.Value);
             ZombilleniumMenu.Administration.AjouterPersonnel(new Demon(force, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
@@ -176,14 +192,14 @@ namespace PFR
         public void AjoutLoupGarou()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            double cruaute = Convert.ToDouble(IndiceCruauteTB.Text);
+            double cruaute = Convert.ToDouble(CruauteSlider.Value);
             ZombilleniumMenu.Administration.AjouterPersonnel(new LoupGarou(cruaute, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
         public void AjoutVampire()
         {
             int cagnotte = Convert.ToInt32(CagnotteTB.Text);
-            double luminosite = Convert.ToDouble(IndiceLuminositeTB.Text);
+            double luminosite = Convert.ToDouble(LuminositeSlider.Value);
             ZombilleniumMenu.Administration.AjouterPersonnel(new Vampire(luminosite, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 
@@ -193,7 +209,7 @@ namespace PFR
             var radios = GradeSP.Children.OfType<RadioButton>();
             RadioButton checkedRadio = radios.FirstOrDefault(rb => rb.GroupName == "GradeRadioButton" && rb.IsChecked == true);
             CouleurZ teint = (CouleurZ)Enum.Parse(typeof(CouleurZ), Convert.ToString(checkedRadio.Content).ToLower());
-            int decompostion = Convert.ToInt32(DegreDecompositionTB.Text);
+            int decompostion = Convert.ToInt32(DecompositionSlider.Value);
             ZombilleniumMenu.Administration.AjouterPersonnel(new Zombie(decompostion, teint, ZombilleniumMenu.Administration.Attractions[indexAttraction], cagnotte, fonction, matricule, nom, prenom, sexe));
         }
 

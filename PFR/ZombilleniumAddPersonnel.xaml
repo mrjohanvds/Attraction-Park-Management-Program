@@ -30,7 +30,7 @@
             <RadioButton Content="Sorcier" GroupName="TypeRadioButton" Checked="Sorcier_RadioButton_Checked" Unchecked="Sorcier_RadioButton_Unchecked"/>
         </StackPanel>
 
-        <Grid Margin="20" Grid.Row="3" Name="InfosGeneralesGrid">
+        <Grid Margin="20, 20, 20, 0" Grid.Row="2" Name="InfosGeneralesGrid">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -59,82 +59,142 @@
             <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="FunctionTextBox"/>
         </Grid>
 
+        <Grid Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
 
-
-        <StackPanel Grid.Row="2">
-
-            <StackPanel Grid.Row="2" Visibility="Collapsed" Name="SorcierSP">
-                <StackPanel Orientation="Horizontal" Name="GradeSP" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Grade :</Label>
+            <Grid Grid.Row="0" Name="GradeGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <Label Style="{StaticResource textBoxLabelStyle}">Grade :</Label>
+                <StackPanel Orientation="Horizontal" Name="GradeSP" HorizontalAlignment="Left" Grid.Column="1">
                     <RadioButton Content="novice" GroupName="GradeRadioButton"/>
                     <RadioButton Content="mega" GroupName="GradeRadioButton"/>
                     <RadioButton Content="giga" GroupName="GradeRadioButton"/>
                     <RadioButton Content="strata" GroupName="GradeRadioButton"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Name="Pouvoirs" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Pouvoirs :</Label>
+            </Grid>
+
+            <Grid Grid.Row="1" Name="PouvoirsGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Style="{StaticResource textBoxLabelStyle}">Pouvoirs :</Label>
+                <StackPanel Orientation="Horizontal" Name="Pouvoirs" HorizontalAlignment="Left" Grid.Column="1">
                     <TextBox Name="PouvoirsTB" Style="{StaticResource textBoxStyle}"></TextBox>
                     <Button Name="AjoutPouvoir" Content="Ajouter" Click="AjoutPouvoir_Button_Click"/>
                 </StackPanel>
-                <Label Name="ListPouvoirLabel" FontWeight="Bold" HorizontalAlignment="Center">La liste des pouvoirs :</Label>
-            </StackPanel>
+            </Grid>
 
-            <StackPanel Grid.Row="2" Visibility="Collapsed" Name="MonstreSP">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Cagnotte :</Label>
-                    <TextBox Style="{StaticResource textBoxStyle}" Name="CagnotteTB"></TextBox>
-                </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Attraction :</Label>
-                    <ComboBox Name="AttractionCB" MinWidth="100" SelectionChanged="AttractionCB_SelectionChanged">
-                        <ComboBox.ItemTemplate>
-                            <DataTemplate>
-                                <TextBlock Text="{Binding}"/>
-                            </DataTemplate>
-                        </ComboBox.ItemTemplate>
-                    </ComboBox>
-                </StackPanel>
-            </StackPanel>
+            <Label Name="ListPouvoirLabel" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="2" Visibility="Collapsed">La liste des pouvoirs :</Label>
 
-            <StackPanel Visibility="Collapsed" Name="DemonSP">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Force :</Label>
-                    <TextBox Style="{StaticResource textBoxStyle}" Name="ForceTB"></TextBox>
-                </StackPanel>
-            </StackPanel>
+            <Grid Grid.Row="0" Name="CagnotteGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <StackPanel Visibility="Collapsed" Name="LoupGarouSP">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Indice de Cruauté :</Label>
-                    <TextBox Style="{StaticResource textBoxStyle}" Name="IndiceCruauteTB"></TextBox>
-                </StackPanel>
-            </StackPanel>
+                <Label Style="{StaticResource textBoxLabelStyle}">Cagnotte :</Label>
+                <TextBox Style="{StaticResource textBoxStyle}" Name="CagnotteTB"></TextBox>
+            </Grid>
 
-            <StackPanel Visibility="Collapsed" Name="VampireSP">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Indice de Luminosité :</Label>
-                    <TextBox Style="{StaticResource textBoxStyle}" Name="IndiceLuminositeTB"></TextBox>
-                </StackPanel>
-            </StackPanel>
+            <Grid Grid.Row="1" Name="AttractionGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
 
-            <StackPanel Visibility="Collapsed" Name="ZombieSP">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Name="TeintSP">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Teint :</Label>
+                <Label Style="{StaticResource textBoxLabelStyle}">Attraction :</Label>
+                <ComboBox Name="AttractionCB" MinWidth="100" SelectionChanged="AttractionCB_SelectionChanged" HorizontalAlignment="Left" Grid.Column="1">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+            </Grid>
+
+            <Grid Grid.Row="2" Name="ForceGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Style="{StaticResource textBoxLabelStyle}">Force :</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                    <Slider  Name="ForceSlider" Minimum="1" Maximum="10" Style="{StaticResource SliderStyle}" TickFrequency="1"/>
+                    <Label Content="Force : " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Value, ElementName=ForceSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Name="CruauteGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Style="{StaticResource textBoxLabelStyle}">Indice de Cruauté :</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                    <Slider  Name="CruauteSlider" Minimum="0" Maximum="4" Style="{StaticResource SliderStyle}"/>
+                    <Label Content="Cruauté : " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Value, ElementName=CruauteSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Name="LuminositeGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Style="{StaticResource textBoxLabelStyle}">Indice de Luminosité :</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                    <Slider  Name="LuminositeSlider" Minimum="0" Maximum="3" Style="{StaticResource SliderStyle}"/>
+                    <Label Content="Luminosité : " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Value, ElementName=LuminositeSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid Grid.Row="2" Name="TeintGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Style="{StaticResource textBoxLabelStyle}">Teint :</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Name="TeintSP" Grid.Column="1">
                     <RadioButton Content="Bleuatre" GroupName="TeintRadioButton"/>
                     <RadioButton Content="Grisatre" GroupName="TeintRadioButton"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Degrée de Décomposition :</Label>
-                    <TextBox Style="{StaticResource textBoxStyle}" Name="DegreDecompositionTB"></TextBox>
+            </Grid>
+
+            <Grid Grid.Row="3" Name="DecompositionGrid" Visibility="Collapsed">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Label Style="{StaticResource textBoxLabelStyle}">Degrée de Décomposition :</Label>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                    <Slider  Name="DecompositionSlider" Minimum="1" Maximum="10" Style="{StaticResource SliderStyle}" TickFrequency="1"/>
+                    <Label Content="Décomposition : " FontWeight="Bold"/>
+                    <TextBlock Text="{Binding Value, ElementName=DecompositionSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
                 </StackPanel>
-            </StackPanel>
-            
-        </StackPanel>
+            </Grid>
+        </Grid>
         
         <Label Name="ValidationLabel" Grid.Row="4" Style="{StaticResource titleLabelStyle}" Background="LightBlue" HorizontalAlignment="Right"/>
         <Button Style="{StaticResource buttonChoiceStyle}" Name="ValidationButton" Grid.Row="4" Click="Click_Button_Validation">Valider !</Button>
-        
-        
-        
     </Grid>
 </Page>
