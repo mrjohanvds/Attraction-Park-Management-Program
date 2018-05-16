@@ -49,5 +49,17 @@
             <Setter Property="Height" Value="30"/>
             <Setter Property="Width" Value="30"/>
         </Style>
+
+        <Style TargetType="DataGrid">
+            <Setter Property="Grid.Row" Value="1"/>
+            <Setter Property="Margin" Value="50"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="Visibility" Value="Collapsed"/>
+        </Style>
+        
+
     </Application.Resources>
 </Application>

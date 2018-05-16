@@ -73,7 +73,6 @@ namespace PFR
         public void StatusCagnotte(int value)
         {
             cagnotte = value;
-            /*if (cagnotte < 50)*/
             if (this is Zombie && ((Zombie)this).Cagnotte > 500)
             {
                 Affectation = null;
