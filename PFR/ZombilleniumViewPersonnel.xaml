@@ -13,6 +13,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Background="LightBlue">
@@ -25,57 +26,60 @@
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="sorcier.jpg"/>
+                    <Image Source="Images\sorcier.jpg"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Sorcier</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="monstre.png"/>
+                    <Image Source="Images\monstre.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Monstre</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="demon.png"/>
+                    <Image Source="Images\demon.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Demon</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="fantome.png"/>
+                    <Image Source="Images\fantome.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Fantome</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="loupgarou.png"/>
+                    <Image Source="Images\loupgarou.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Loup Garou</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="vampire.gif"/>
+                    <Image Source="Images\vampire.gif"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Vampire</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="zombie.png"/>
+                    <Image Source="Images\zombie.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Zombie</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
         </ComboBox>
 
-        <Grid Margin="50" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <DataGrid Name="ToutPersoDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Visible" Loaded="ToutPersoDG_Loaded" />
-            <DataGrid Name="MonstreDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="MonstreDG_Loaded" />
-            <DataGrid Name="SorcierDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="SorcierDG_Loaded" />
-            <DataGrid Name="DemonDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="DemonDG_Loaded"/>
-            <DataGrid Name="FantomeDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="FantomeDG_Loaded" />
-            <DataGrid Name="LoupGarouDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="LoupGarouDG_Loaded" />
-            <DataGrid Name="VampireDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="VampireDG_Loaded" />
-            <DataGrid Name="ZombieDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="ZombieDG_Loaded" />
+        <Grid Margin="50" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <DataGrid Name="ToutPersoDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Visible" Loaded="ToutPersoDG_Loaded" FontSize="16"/>
+            <DataGrid Name="MonstreDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="MonstreDG_Loaded" FontSize="16"/>
+            <DataGrid Name="SorcierDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="SorcierDG_Loaded" FontSize="16"/>
+            <DataGrid Name="DemonDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="DemonDG_Loaded" FontSize="16"/>
+            <DataGrid Name="FantomeDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="FantomeDG_Loaded" FontSize="16"/>
+            <DataGrid Name="LoupGarouDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="LoupGarouDG_Loaded" FontSize="16"/>
+            <DataGrid Name="VampireDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="VampireDG_Loaded" FontSize="16"/>
+            <DataGrid Name="ZombieDG" HorizontalAlignment="Center" VerticalAlignment="Top"  Visibility="Hidden" Loaded="ZombieDG_Loaded" FontSize="16"/>
         </Grid>
+
+        <Button Grid.Row="2" Name="ValidationButton" Style="{StaticResource buttonChoiceStyle}" Click="ValidationButton_Click"  Content="Valider les changements"/>
+
     </Grid>
 </Page>

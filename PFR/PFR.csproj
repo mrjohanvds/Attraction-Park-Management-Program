@@ -155,18 +155,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="background.jpg" />
+    <Resource Include="Images\background.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="fantome.png" />
-    <Resource Include="loupgarou.png" />
-    <Resource Include="monstre.png" />
-    <Resource Include="sorcier.jpg" />
-    <Resource Include="vampire.gif" />
-    <Resource Include="zombie.png" />
+    <Resource Include="Images\fantome.png" />
+    <Resource Include="Images\loupgarou.png" />
+    <Resource Include="Images\monstre.png" />
+    <Resource Include="Images\sorcier.jpg" />
+    <Resource Include="Images\vampire.gif" />
+    <Resource Include="Images\zombie.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="demon.png" />
+    <Resource Include="Images\demon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

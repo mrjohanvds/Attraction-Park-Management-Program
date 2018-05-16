@@ -82,6 +82,7 @@ namespace PFR
                     {
                         case "Monstre":
                             if (Int32.TryParse(tab[7], out idAttraction) && ChercherAttraction(idAttraction) != -1) attraction = attractions[ChercherAttraction(Convert.ToInt32(tab[7]))];
+                            else attraction = null;
                             personnel = new Monstre(attraction, Convert.ToInt32(tab[6]), tab[5], Convert.ToInt32(tab[1]), tab[2], tab[3], (TypeSexe)Enum.Parse(typeof(TypeSexe), tab[4]));
                             break;
                         case "Sorcier":
@@ -91,26 +92,31 @@ namespace PFR
                             break;
                         case "Demon":
                             if (Int32.TryParse(tab[7], out idAttraction) && ChercherAttraction(idAttraction) != -1) attraction = attractions[ChercherAttraction(Convert.ToInt32(tab[7]))];
+                            else attraction = null;
                             personnel = new Demon(Convert.ToInt32(tab[8]), attraction, Convert.ToInt32(tab[6]), tab[5], Convert.ToInt32(tab[1]), tab[2], tab[3], (TypeSexe)Enum.Parse(typeof(TypeSexe), tab[4]));
 
                             break;
                         case "Fantome":
                             if (Int32.TryParse(tab[7], out idAttraction) && ChercherAttraction(idAttraction) != -1) attraction = attractions[ChercherAttraction(Convert.ToInt32(tab[7]))];
+                            else attraction = null;
                             personnel = new Fantome(attraction, Convert.ToInt32(tab[6]), tab[5], Convert.ToInt32(tab[1]), tab[2], tab[3], (TypeSexe)Enum.Parse(typeof(TypeSexe), tab[4]));
 
                             break;
                         case "LoupGarou":
                             if (Int32.TryParse(tab[7], out idAttraction) && ChercherAttraction(idAttraction) != -1) attraction = attractions[ChercherAttraction(Convert.ToInt32(tab[7]))];
+                            else attraction = null;
                             personnel = new LoupGarou(Convert.ToDouble(tab[8]), attraction, Convert.ToInt32(tab[6]), tab[5], Convert.ToInt32(tab[1]), tab[2], tab[3], (TypeSexe)Enum.Parse(typeof(TypeSexe), tab[4]));
                             
                             break;
                         case "Vampire":
                             if (Int32.TryParse(tab[7], out idAttraction) && ChercherAttraction(idAttraction) != -1) attraction = attractions[ChercherAttraction(Convert.ToInt32(tab[7]))];
+                            else attraction = null;
                             personnel = new Vampire(Convert.ToDouble(tab[8]), attraction, Convert.ToInt32(tab[6]), tab[5], Convert.ToInt32(tab[1]), tab[2], tab[3], (TypeSexe)Enum.Parse(typeof(TypeSexe), tab[4]));
                             
                             break;
                         case "Zombie":
                             if (Int32.TryParse(tab[7], out idAttraction) && ChercherAttraction(idAttraction) != -1) attraction = attractions[ChercherAttraction(Convert.ToInt32(tab[7]))];
+                            else attraction = null;
                             personnel = new Zombie(Convert.ToInt32(tab[9]), (CouleurZ)Enum.Parse(typeof(CouleurZ), tab[8]), attraction, Convert.ToInt32(tab[6]), tab[5], Convert.ToInt32(tab[1]), tab[2], tab[3], (TypeSexe)Enum.Parse(typeof(TypeSexe), tab[4]));
                             break;
                     }

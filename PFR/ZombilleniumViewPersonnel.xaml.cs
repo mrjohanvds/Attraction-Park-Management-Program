@@ -171,5 +171,11 @@ namespace PFR
             VampireDG.Visibility = Visibility.Hidden;
             ZombieDG.Visibility = Visibility.Hidden;
         }
+
+        private void ValidationButton_Click(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumViewPersonnel zombilleniumViewPersonnel = new ZombilleniumViewPersonnel();
+            this.NavigationService.Navigate(zombilleniumViewPersonnel);
+        }
     }
 }
