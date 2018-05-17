@@ -80,7 +80,7 @@ namespace PFR
             }
 
         }
-            private void DarkRide_RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void DarkRide_RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             DarkrideSP.Visibility = Visibility.Visible;
 

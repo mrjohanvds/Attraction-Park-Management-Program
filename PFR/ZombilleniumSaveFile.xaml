@@ -12,7 +12,8 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         
         <Border Grid.Row="0" Background="LightBlue">
@@ -28,12 +29,88 @@
             </Grid>
         </Border>
 
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="2">
             <Label Style="{StaticResource textBoxLabelStyle}">Veuillez entrer le nom de votre fichier (sans extension)</Label>
             <TextBox Style="{StaticResource textBoxStyle}" Name="NomFichierTB"/>
         </StackPanel>
-        
-        <Button Name="PersonnelButton" Style="{StaticResource buttonChoiceStyle}" Click="PersonnelButton_Click" Grid.Row="2">Sortie du personnel</Button>
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Border Background="LightBlue"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 40" BorderThickness="1" BorderBrush="Black">
+                <StackPanel Grid.Column="0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18">Tout le personnel</Label>
+                        <CheckBox Name="ToutPersoCB" VerticalAlignment="Center" RenderSize="20,20" Checked="ToutPersoCB_Checked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Sorcier</Label>
+                        <CheckBox Name="SorcierCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="SorcierCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18">Tous les monstres</Label>
+                        <CheckBox Name="TousMonstresCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="TousMonstresCB_Unchecked" Checked="TousMonstresCB_Checked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Monstre</Label>
+                        <CheckBox Name="MonstreCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="MonstreCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Demon</Label>
+                        <CheckBox Name="DemonCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="DemonCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Fantome</Label>
+                        <CheckBox Name="FantomeCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="FantomeCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">LoupGarou</Label>
+                        <CheckBox Name="LoupGarouCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="LoupGarouCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Vampire</Label>
+                        <CheckBox Name="VampireCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="VampireCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Zombie</Label>
+                        <CheckBox Name="ZombieCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="ZombieCB_Unchecked"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+            <Border Background="LightBlue"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0, 40" BorderThickness="1" BorderBrush="Black">
+                <StackPanel Grid.Column="0">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18">Toutes les attractions</Label>
+                        <CheckBox Name="ToutAttractionsCB" VerticalAlignment="Center" RenderSize="20,20" Checked="ToutAttractionsCB_Checked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Boutique</Label>
+                        <CheckBox Name="BoutiqueCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="BoutiqueCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">DarkRide</Label>
+                        <CheckBox Name="DarkRideCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="DarkRideCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">RollerCoaster</Label>
+                        <CheckBox Name="RollerCoasterCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="RollerCoasterCB_Unchecked"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                        <Label Style="{StaticResource textBoxLabelStyle}" FontSize="18" FontWeight="Normal">Spectacle</Label>
+                        <CheckBox Name="SpectacleCB" VerticalAlignment="Center" RenderSize="20,20" Unchecked="SpectacleCB_Unchecked"/>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+
+        </Grid>
+
+
+        <Label Name="ValidationLabel" Grid.Row="3" Style="{StaticResource titleLabelStyle}" Background="LightBlue" HorizontalAlignment="Right"/>
+        <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click" Grid.Row="3">Sortie Fichier .csv</Button>
         
     </Grid>
 </Page>
