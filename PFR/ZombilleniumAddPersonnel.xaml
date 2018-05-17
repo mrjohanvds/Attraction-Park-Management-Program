@@ -29,179 +29,191 @@
                 <Label Grid.Column="1" Style="{StaticResource titleLabelStyle}">Ajout d'un membre dans le personnel</Label>
             </Grid>
         </Border>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Name="TypeSP">
-            <RadioButton Content="Monstre" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>
-            <RadioButton Content="Demon" GroupName="TypeRadioButton" Checked="Demon_RadioButton_Checked" Unchecked="Demon_RadioButton_Unchecked"/>
-            <RadioButton Content="Fantome" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>
-            <RadioButton Content="Loup Garou" GroupName="TypeRadioButton" Checked="LoupGarou_RadioButton_Checked" Unchecked="LoupGarou_RadioButton_Unchecked"/>
-            <RadioButton Content="Vampire" GroupName="TypeRadioButton" Checked="Vampire_RadioButton_Checked" Unchecked="Vampire_RadioButton_Unchecked"/>
-            <RadioButton Content="Zombie" GroupName="TypeRadioButton" Checked="Zombie_RadioButton_Checked" Unchecked="Zombie_RadioButton_Unchecked"/>
-            <RadioButton Content="Sorcier" GroupName="TypeRadioButton" Checked="Sorcier_RadioButton_Checked" Unchecked="Sorcier_RadioButton_Unchecked"/>
-        </StackPanel>
 
-        <Grid Margin="20, 20, 20, 0" Grid.Row="2" Name="InfosGeneralesGrid">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="30"/>
-            </Grid.RowDefinitions>
-
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="0">Nom :</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="1">Prenom :</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="2">Matricule :</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="3">Sexe :</Label>
-            <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="4">Fonction :</Label>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="0" Name="NameTextBox"/>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="1" Name="FirstNameTextBox"/>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="2" Name="MatriculeTextBox"/>
-            <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" Name="SexeSP">
-                <RadioButton Content="femelle" GroupName="SexeRadioButton"/>
-                <RadioButton Content="male" GroupName="SexeRadioButton"/>
-                <RadioButton Content="autre" GroupName="SexeRadioButton"/>
+        <Border Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Background="LightBlue" BorderThickness="1" BorderBrush="Black">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Name="TypeSP">
+                <RadioButton Content="Monstre" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>
+                <RadioButton Content="Demon" GroupName="TypeRadioButton" Checked="Demon_RadioButton_Checked" Unchecked="Demon_RadioButton_Unchecked"/>
+                <RadioButton Content="Fantome" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>
+                <RadioButton Content="Loup Garou" GroupName="TypeRadioButton" Checked="LoupGarou_RadioButton_Checked" Unchecked="LoupGarou_RadioButton_Unchecked"/>
+                <RadioButton Content="Vampire" GroupName="TypeRadioButton" Checked="Vampire_RadioButton_Checked" Unchecked="Vampire_RadioButton_Unchecked"/>
+                <RadioButton Content="Zombie" GroupName="TypeRadioButton" Checked="Zombie_RadioButton_Checked" Unchecked="Zombie_RadioButton_Unchecked"/>
+                <RadioButton Content="Sorcier" GroupName="TypeRadioButton" Checked="Sorcier_RadioButton_Checked" Unchecked="Sorcier_RadioButton_Unchecked"/>
             </StackPanel>
-            <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="FunctionTextBox"/>
-        </Grid>
+        </Border>
 
-        <Grid Grid.Row="3">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-
-            <Grid Grid.Row="0" Name="GradeGrid" Visibility="Collapsed">
+        <Border Grid.Row="2"  VerticalAlignment="Center" Background="LightBlue" BorderThickness="1" BorderBrush="Black" Margin="0,20,0,5" Width="400">
+            <Grid Margin="20, 0" Grid.Row="2" Name="InfosGeneralesGrid">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="30"/>
+                </Grid.RowDefinitions>
+
+                <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="0">Nom :</Label>
+                <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="1">Prenom :</Label>
+                <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="2">Matricule :</Label>
+                <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="3">Sexe :</Label>
+                <Label Style="{StaticResource textBoxLabelStyle}" Grid.Row="4">Fonction :</Label>
+                <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="0" Name="NameTextBox"/>
+                <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="1" Name="FirstNameTextBox"/>
+                <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="2" Name="MatriculeTextBox"/>
+                <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" Name="SexeSP">
+                    <RadioButton Content="femelle" GroupName="SexeRadioButton"/>
+                    <RadioButton Content="male" GroupName="SexeRadioButton"/>
+                    <RadioButton Content="autre" GroupName="SexeRadioButton"/>
+                </StackPanel>
+                <TextBox Style="{StaticResource textBoxStyle}" Grid.Row="4" Name="FunctionTextBox"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Row="3" VerticalAlignment="Top" Background="LightBlue" BorderThickness="1" BorderBrush="Black" Width="400" >
+            <Grid Grid.Row="3" Margin="20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
                 
-                <Label Style="{StaticResource textBoxLabelStyle}">Grade :</Label>
-                <StackPanel Orientation="Horizontal" Name="GradeSP" HorizontalAlignment="Left" Grid.Column="1">
-                    <RadioButton Content="novice" GroupName="GradeRadioButton"/>
-                    <RadioButton Content="mega" GroupName="GradeRadioButton"/>
-                    <RadioButton Content="giga" GroupName="GradeRadioButton"/>
-                    <RadioButton Content="strata" GroupName="GradeRadioButton"/>
-                </StackPanel>
+                
+                
+                
+                <Grid Grid.Row="0" Name="GradeGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Grade :</Label>
+                    <StackPanel Orientation="Horizontal" Name="GradeSP" HorizontalAlignment="Left" Grid.Column="1">
+                        <RadioButton Content="novice" GroupName="GradeRadioButton"/>
+                        <RadioButton Content="mega" GroupName="GradeRadioButton"/>
+                        <RadioButton Content="giga" GroupName="GradeRadioButton"/>
+                        <RadioButton Content="strata" GroupName="GradeRadioButton"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1" Name="PouvoirsGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Pouvoirs :</Label>
+                    <StackPanel Orientation="Horizontal" Name="Pouvoirs" HorizontalAlignment="Left" Grid.Column="1">
+                        <TextBox Name="PouvoirsTB" Style="{StaticResource textBoxStyle}"></TextBox>
+                        <Button Name="AjoutPouvoir" Content="Ajouter" Click="AjoutPouvoir_Button_Click"/>
+                    </StackPanel>
+                </Grid>
+
+                <Label Name="ListPouvoirLabel" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="2" Visibility="Collapsed">La liste des pouvoirs :</Label>
+
+                <Grid Grid.Row="0" Name="CagnotteGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Cagnotte :</Label>
+                    <TextBox Style="{StaticResource textBoxStyle}" Name="CagnotteTB"></TextBox>
+                </Grid>
+
+                <Grid Grid.Row="1" Name="AttractionGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Attraction :</Label>
+                    <ComboBox Name="AttractionCB" MinWidth="100" SelectionChanged="AttractionCB_SelectionChanged" HorizontalAlignment="Left" Grid.Column="1">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </Grid>
+
+                <Grid Grid.Row="2" Name="ForceGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Force :</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                        <Slider  Name="ForceSlider" Minimum="1" Maximum="10" Style="{StaticResource SliderStyle}" TickFrequency="1"/>
+                        <Label Content="Force : " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Value, ElementName=ForceSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="2" Name="CruauteGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Indice de Cruauté :</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                        <Slider  Name="CruauteSlider" Minimum="0" Maximum="4" Style="{StaticResource SliderStyle}"/>
+                        <Label Content="Cruauté : " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Value, ElementName=CruauteSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="2" Name="LuminositeGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Indice de Luminosité :</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                        <Slider  Name="LuminositeSlider" Minimum="0" Maximum="3" Style="{StaticResource SliderStyle}"/>
+                        <Label Content="Luminosité : " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Value, ElementName=LuminositeSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="2" Name="TeintGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Teint :</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Name="TeintSP" Grid.Column="1">
+                        <RadioButton Content="Bleuatre" GroupName="TeintRadioButton"/>
+                        <RadioButton Content="Grisatre" GroupName="TeintRadioButton"/>
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="3" Name="DecompositionGrid" Visibility="Collapsed">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Style="{StaticResource textBoxLabelStyle}">Degrée de Décomposition :</Label>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
+                        <Slider  Name="DecompositionSlider" Minimum="1" Maximum="10" Style="{StaticResource SliderStyle}" TickFrequency="1"/>
+                        <Label Content="Décomposition : " FontWeight="Bold"/>
+                        <TextBlock Text="{Binding Value, ElementName=DecompositionSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
+                    </StackPanel>
+                </Grid>
             </Grid>
-
-            <Grid Grid.Row="1" Name="PouvoirsGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Pouvoirs :</Label>
-                <StackPanel Orientation="Horizontal" Name="Pouvoirs" HorizontalAlignment="Left" Grid.Column="1">
-                    <TextBox Name="PouvoirsTB" Style="{StaticResource textBoxStyle}"></TextBox>
-                    <Button Name="AjoutPouvoir" Content="Ajouter" Click="AjoutPouvoir_Button_Click"/>
-                </StackPanel>
-            </Grid>
-
-            <Label Name="ListPouvoirLabel" FontWeight="Bold" HorizontalAlignment="Center" Grid.Row="2" Visibility="Collapsed">La liste des pouvoirs :</Label>
-
-            <Grid Grid.Row="0" Name="CagnotteGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Cagnotte :</Label>
-                <TextBox Style="{StaticResource textBoxStyle}" Name="CagnotteTB"></TextBox>
-            </Grid>
-
-            <Grid Grid.Row="1" Name="AttractionGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Attraction :</Label>
-                <ComboBox Name="AttractionCB" MinWidth="100" SelectionChanged="AttractionCB_SelectionChanged" HorizontalAlignment="Left" Grid.Column="1">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding}"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-            </Grid>
-
-            <Grid Grid.Row="2" Name="ForceGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Force :</Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
-                    <Slider  Name="ForceSlider" Minimum="1" Maximum="10" Style="{StaticResource SliderStyle}" TickFrequency="1"/>
-                    <Label Content="Force : " FontWeight="Bold"/>
-                    <TextBlock Text="{Binding Value, ElementName=ForceSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
-                </StackPanel>
-            </Grid>
-
-            <Grid Grid.Row="2" Name="CruauteGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Indice de Cruauté :</Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
-                    <Slider  Name="CruauteSlider" Minimum="0" Maximum="4" Style="{StaticResource SliderStyle}"/>
-                    <Label Content="Cruauté : " FontWeight="Bold"/>
-                    <TextBlock Text="{Binding Value, ElementName=CruauteSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
-                </StackPanel>
-            </Grid>
-
-            <Grid Grid.Row="2" Name="LuminositeGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Indice de Luminosité :</Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
-                    <Slider  Name="LuminositeSlider" Minimum="0" Maximum="3" Style="{StaticResource SliderStyle}"/>
-                    <Label Content="Luminosité : " FontWeight="Bold"/>
-                    <TextBlock Text="{Binding Value, ElementName=LuminositeSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
-                </StackPanel>
-            </Grid>
-
-            <Grid Grid.Row="2" Name="TeintGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Teint :</Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Name="TeintSP" Grid.Column="1">
-                    <RadioButton Content="Bleuatre" GroupName="TeintRadioButton"/>
-                    <RadioButton Content="Grisatre" GroupName="TeintRadioButton"/>
-                </StackPanel>
-            </Grid>
-
-            <Grid Grid.Row="3" Name="DecompositionGrid" Visibility="Collapsed">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-
-                <Label Style="{StaticResource textBoxLabelStyle}">Degrée de Décomposition :</Label>
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Column="1">
-                    <Slider  Name="DecompositionSlider" Minimum="1" Maximum="10" Style="{StaticResource SliderStyle}" TickFrequency="1"/>
-                    <Label Content="Décomposition : " FontWeight="Bold"/>
-                    <TextBlock Text="{Binding Value, ElementName=DecompositionSlider}" VerticalAlignment="Center" FontWeight="Bold"/>
-                </StackPanel>
-            </Grid>
-        </Grid>
+        </Border>
+        
         
         <Label Name="ValidationLabel" Grid.Row="4" Style="{StaticResource titleLabelStyle}" Background="LightBlue" HorizontalAlignment="Right"/>
         <Button Style="{StaticResource buttonChoiceStyle}" Name="ValidationButton" Grid.Row="4" Click="Click_Button_Validation">Valider !</Button>

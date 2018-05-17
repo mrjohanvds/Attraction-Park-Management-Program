@@ -184,9 +184,7 @@ namespace PFR
 
             ValidationLabel.Content = NomFichierTB.Text + ".csv a bien été créé dans le dossier debug !";
         }
-
-
-
+        
         private void Accueil_Click(object sender, RoutedEventArgs e)
         {
             ZombilleniumMenu zombilleniumMenu = new ZombilleniumMenu();
@@ -279,6 +277,22 @@ namespace PFR
             ToutAttractionsCB.IsChecked = false;
         }
 
+        private void ToutUncheckCB_Checked(object sender, RoutedEventArgs e)
+        {
+            SorcierCB.IsChecked = false;
+            MonstreCB.IsChecked = false;
+            DemonCB.IsChecked = false;
+            FantomeCB.IsChecked = false;
+            LoupGarouCB.IsChecked = false;
+            VampireCB.IsChecked = false;
+            ZombieCB.IsChecked = false;
+            BoutiqueCB.IsChecked = false;
+            DarkRideCB.IsChecked = false;
+            RollerCoasterCB.IsChecked = false;
+            SpectacleCB.IsChecked = false;
+        }
+
         #endregion
+
     }
 }

@@ -30,6 +30,7 @@
                 <Button Style="{StaticResource buttonChoiceStyle}" Click="Button_Click_Ajouter_Attraction" Margin="25, 0">Ajouter  Attraction</Button>
             </StackPanel>
             <Button Style="{StaticResource buttonChoiceStyle}" Click="SortieFichierButton_Click" Margin="0, 20">Sortie Fichier .csv</Button>
+            <Button Style="{StaticResource buttonChoiceStyle}" Click="QuitterButton_Click" Margin="0, 20">Quitter</Button>
         </StackPanel>
         
             

@@ -56,5 +56,10 @@ namespace PFR
             ZombilleniumSaveFile zombilleniumSaveFile = new ZombilleniumSaveFile();
             this.NavigationService.Navigate(zombilleniumSaveFile);
         }
+
+        private void QuitterButton_Click(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Application.Current.Shutdown();
+        }
     }
 }
