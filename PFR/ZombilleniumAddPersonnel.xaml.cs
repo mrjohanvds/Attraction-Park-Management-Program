@@ -228,5 +228,11 @@ namespace PFR
             this.Title = value;
             indexAttraction = ZombilleniumMenu.Administration.ChercherIndexNomAttraction(value);
         }
+        
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumMenu zombilleniumMenu = new ZombilleniumMenu();
+            this.NavigationService.Navigate(zombilleniumMenu);
+        }
     }
 }

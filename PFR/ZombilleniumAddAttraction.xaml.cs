@@ -131,5 +131,11 @@ namespace PFR
 
         }
 
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumMenu zombilleniumMenu = new ZombilleniumMenu();
+            this.NavigationService.Navigate(zombilleniumMenu);
+        }
+
     }
 }

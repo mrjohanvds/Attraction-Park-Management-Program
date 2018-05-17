@@ -125,5 +125,18 @@ namespace PFR
             SpectacleDG.Visibility = Visibility.Hidden;
         }
 
+        private void ValidationButton_Click(object sender, RoutedEventArgs e)
+        {
+            //ZombilleniumMenu.Administration.Attractions[ToutAttractionDG.SelectedIndex].Maintenance = ToutAttractionDG.SelectedItems.
+
+            ZombilleniumViewAttraction zombilleniumViewAttraction = new ZombilleniumViewAttraction();
+            this.NavigationService.Navigate(zombilleniumViewAttraction);
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumMenu zombilleniumMenu = new ZombilleniumMenu();
+            this.NavigationService.Navigate(zombilleniumMenu);
+        }
     }
 }

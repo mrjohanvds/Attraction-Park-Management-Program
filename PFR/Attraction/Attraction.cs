@@ -16,6 +16,7 @@ namespace PFR
         private string nom;
         private bool ouvert;
         private string typeDeBesoin;
+        private string listEquipe;
 
         public Attraction(bool besoinSpecifique, TimeSpan dureeMaintenance, List<Monstre> equipe, int identifiant, bool maintenance, string natureMaintenance, int nbMinMonstre, string nom, bool ouvert, string typeDeBesoin)
         {
@@ -29,20 +30,66 @@ namespace PFR
             this.nom = nom;
             this.ouvert = ouvert;
             this.typeDeBesoin = typeDeBesoin;
+            listEquipe = ListToString();
         }
 
         #region Accesseurs
 
-        public bool BesoinSpecifique { get => besoinSpecifique; set => besoinSpecifique = value; }
-        public TimeSpan DureeMaintenance { get => dureeMaintenance; set => dureeMaintenance = value; }
-        public int Identifiant { get => identifiant; set => identifiant = value; }
-        public bool Maintenance { get => maintenance; set => maintenance = value; }
-        public string NatureMaintenance { get => natureMaintenance; set => natureMaintenance = value; }
-        public int NbMinMonstre { get => nbMinMonstre; set => nbMinMonstre = value; }
-        public string Nom { get => nom; set => nom = value; }
-        public bool Ouvert { get => ouvert; set => ouvert = value; }
-        public string TypeDeBesoin { get => typeDeBesoin; set => typeDeBesoin = value; }
-        internal List<Monstre> Equipe { get => equipe; set => equipe = value; }
+        public bool BesoinSpecifique
+        {
+            get { return besoinSpecifique; }
+            set { besoinSpecifique = value; }
+        }
+        public TimeSpan DureeMaintenance
+        {
+            get { return dureeMaintenance; }
+            set { dureeMaintenance = value; }
+        }
+        public int Identifiant
+        {
+            get { return identifiant; }
+            set { identifiant = value; }
+        }
+        public bool Maintenance
+        {
+            get { return maintenance; }
+            set { StatusMaintenance(value); }
+        }
+        public string NatureMaintenance
+        {
+            get { return natureMaintenance; }
+            set { natureMaintenance = value; }
+        }
+        public int NbMinMonstre
+        {
+            get { return nbMinMonstre; }
+            set { nbMinMonstre = value; }
+        }
+        public string Nom
+        {
+            get { return nom; }
+            set { nom = value; }
+        }
+        public bool Ouvert
+        {
+            get { return ouvert; }
+            set { ouvert = value; }
+        }
+        public string TypeDeBesoin
+        {
+            get { return typeDeBesoin; }
+            set { typeDeBesoin = value; }
+        }
+        public List<Monstre> Equipe
+        {
+            get { return equipe; }
+            set { equipe = value; }
+        }
+        public string ListEquipe
+        {
+            get { return listEquipe; }
+            set { listEquipe = value; }
+        }
 
         #endregion
 
@@ -75,6 +122,27 @@ namespace PFR
                 natureMaintenance = uneNatureMaintenance;
                 ouvert = !uneMaitenance;
                 dureeMaintenance = uneDuree;
+        }
+
+        public void StatusMaintenance(bool uneMaintenance)
+        {
+            maintenance = uneMaintenance;
+            ouvert = !maintenance;
+        }
+
+        private string ListToString()
+        {
+            string str = "";
+            int nb = equipe.Count;
+            if (nb == 0)
+                return "vide";
+            foreach(Monstre personnel in equipe)
+            {
+                str += personnel.Prenom + " " + personnel.Nom;
+                if (equipe.IndexOf(personnel) != nb - 1)
+                    str += ",\n";
+            }
+            return str;
         }
 
     }

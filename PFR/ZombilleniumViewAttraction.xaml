@@ -5,15 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PFR"
         mc:Ignorable="d"
-        Title="Zombillenium - View Attraction" Height="750" Width="1300">
+        Title="Zombillenium - View Attraction" d:DesignHeight="750" d:DesignWidth="1300">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Background="LightBlue">
-            <Label Style="{StaticResource titleLabelStyle}">Liste des Attractions</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Background="Transparent" BorderThickness="0" Name="Accueil" Click="Accueil_Click">
+                    <Image Source="Images/accueil.ico" Height="45" Width="45"/>
+                </Button>
+                <Label Grid.Column="1" Style="{StaticResource titleLabelStyle}">Liste des Attractions</Label>
+            </Grid>
         </Border>
 
         <ComboBox Name="typeCB" Height="40" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="TypeCB_SelectionChanged">
@@ -22,38 +33,221 @@
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="market-store-icon.jpeg"/>
+                    <Image Source="Images/boutique.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Boutique</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="darkride.jpg"/>
+                    <Image Source="Images/darkride.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">DarkRide</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="rollercoaster.png"/>
+                    <Image Source="Images/rollercoaster.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">RollerCoaster</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
             <ComboBoxItem>
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="spectacle.png"/>
+                    <Image Source="Images/spectacle.png"/>
                     <TextBlock Style="{StaticResource textComboStyle}">Spectacle</TextBlock>
                 </StackPanel>
             </ComboBoxItem>
 
         </ComboBox>
 
-        <Grid Margin="50" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <DataGrid Name="ToutAttractionDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Visible" Loaded="ToutAttractionDG_Loaded" />
-            <DataGrid Name="BoutiqueDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="BoutiqueDG_Loaded" />
-            <DataGrid Name="DarkRideDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="DarkRideDG_Loaded" />
-            <DataGrid Name="RollerCoasterDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="RollerCoasterDG_Loaded" />
-            <DataGrid Name="SpectacleDG" HorizontalAlignment="Left" VerticalAlignment="Top"  Visibility="Hidden" Loaded="SpectacleDG_Loaded" />
-        </Grid>
+        <DataGrid Name="ToutAttractionDG" Loaded="ToutAttractionDG_Loaded" Visibility="Visible">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Identifiant}" Header="Identifiant" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding Ouvert}" Header="Ouvert" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding BesoinSpecifique}" Header="Besoin Specifique" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding TypeDeBesoin}" Header="Type de besoin" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="Beige" Padding="10">
+                        <Grid Margin="5,0,0,0" MinWidth="{Binding Path=ToutAttractionDG}" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="125"/>
+                                <ColumnDefinition MinWidth="125"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Maintenance" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <CheckBox Margin="3" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Path=Maintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35" Name="MaitenanceAttractionCB"/>
+                            <TextBlock Text="Durée Maintenance" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Text="{Binding Path=DureeMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35" Name="DureeTB"/>
+                            <TextBlock Text="Nature Maintenance" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                            <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Text="{Binding Path=NatureMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35" Name="NatureTB"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+
+        <DataGrid Name="BoutiqueDG" Loaded="BoutiqueDG_Loaded" Visibility="Collapsed">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Identifiant}" Header="Identifiant" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding Ouvert}" Header="Ouvert" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding BesoinSpecifique}" Header="Besoin Specifique" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding TypeDeBesoin}" Header="Type de besoin" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Type}" Header="Type de boutique" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="Beige" Padding="10">
+                        <Grid Margin="5,0,0,0" MinWidth="{Binding Path=ToutAttractionDG}" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="125"/>
+                                <ColumnDefinition MinWidth="125"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Maintenance" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <CheckBox Margin="3" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Path=Maintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35" />
+                            <TextBlock Text="Durée Maintenance" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Text="{Binding Path=DureeMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                            <TextBlock Text="Nature Maintenance" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                            <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Text="{Binding Path=NatureMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+
+        <DataGrid Name="DarkRideDG" Loaded="DarkRideDG_Loaded" Visibility="Collapsed">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Identifiant}" Header="Identifiant" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding Ouvert}" Header="Ouvert" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding BesoinSpecifique}" Header="Besoin Specifique" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding TypeDeBesoin}" Header="Type de besoin" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Duree}" Header="Duree" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding Vehicule}" Header="Avec véhicule" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="Beige" Padding="10">
+                        <Grid Margin="5,0,0,0" MinWidth="{Binding Path=ToutAttractionDG}" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="125"/>
+                                <ColumnDefinition MinWidth="125"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Maintenance" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <CheckBox Margin="3" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Path=Maintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35" />
+                            <TextBlock Text="Durée Maintenance" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Text="{Binding Path=DureeMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                            <TextBlock Text="Nature Maintenance" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                            <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Text="{Binding Path=NatureMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        
+        <DataGrid Name="RollerCoasterDG" Loaded="RollerCoasterDG_Loaded" Visibility="Collapsed">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Identifiant}" Header="Identifiant" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding Ouvert}" Header="Ouvert" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding BesoinSpecifique}" Header="Besoin Specifique" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding TypeDeBesoin}" Header="Type de besoin" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Duree}" Header="Duree" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Categorie}" Header="Catégorie" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding AgeMinimum}" Header="Age minimum" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding TailleMinimum}" Header="Taille Minimum" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="Beige" Padding="10">
+                        <Grid Margin="5,0,0,0" MinWidth="{Binding Path=ToutAttractionDG}" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="125"/>
+                                <ColumnDefinition MinWidth="125"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Maintenance" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <CheckBox Margin="3" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Path=Maintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35" />
+                            <TextBlock Text="Durée Maintenance" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Text="{Binding Path=DureeMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                            <TextBlock Text="Nature Maintenance" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                            <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Text="{Binding Path=NatureMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        
+        <DataGrid Name="SpectacleDG" Loaded="SpectacleDG_Loaded" Visibility="Collapsed">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Identifiant}" Header="Identifiant" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding Ouvert}" Header="Ouvert" IsReadOnly="True"/>
+                <DataGridCheckBoxColumn Binding="{Binding BesoinSpecifique}" Header="Besoin Specifique" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding TypeDeBesoin}" Header="Type de besoin" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding NomSalle}" Header="Nom de la salle" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding NombrePlace}" Header="Nombre de place" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Horaires" Binding="{Binding Horaires}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <Border BorderThickness="0" Background="Beige" Padding="10">
+                        <Grid Margin="5,0,0,0" MinWidth="{Binding Path=ToutAttractionDG}" HorizontalAlignment="Left">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition MinWidth="125"/>
+                                <ColumnDefinition MinWidth="125"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Maintenance" Margin="10,0,0,0" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <CheckBox Margin="3" Grid.Row="0" Grid.Column="1" IsChecked="{Binding Path=Maintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35" />
+                            <TextBlock Text="Durée Maintenance" Margin="10,0,0,0" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" />
+                            <TextBox Margin="3" Grid.Row="1" Grid.Column="1" Text="{Binding Path=DureeMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                            <TextBlock Text="Nature Maintenance" Margin="10,0,0,0" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center"  HorizontalAlignment="Left"/>
+                            <TextBox Margin="3" Grid.Row="2" Grid.Column="1" Text="{Binding Path=NatureMaintenance, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" MaxHeight="35"/>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+        </DataGrid>
+        
+        <Border Grid.Row="2" Background="LightBlue">
+            <Label Style="{StaticResource titleLabelStyle}" FontSize="20">* : Caractéristique modifiable directement dans le tableau</Label>
+        </Border>
+
+        <Button Grid.Row="3" Name="ValidationButton" Style="{StaticResource buttonChoiceStyle}" Click="ValidationButton_Click"  Content="Valider les changements"/>
 
     </Grid>
 </Page>

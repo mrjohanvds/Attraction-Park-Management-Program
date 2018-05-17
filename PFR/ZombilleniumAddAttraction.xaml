@@ -16,9 +16,20 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+
         <Border Grid.Row="0" Background="LightBlue">
-            <Label Style="{StaticResource titleLabelStyle}" Content="Ajouter une attraction"/>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Background="Transparent" BorderThickness="0" Name="Accueil" Click="Accueil_Click">
+                    <Image Source="Images/accueil.ico" Height="45" Width="45"/>
+                </Button>
+                <Label Grid.Column="1" Style="{StaticResource titleLabelStyle}">Ajouter une attraction</Label>
+            </Grid>
         </Border>
+
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Name="TypeSP">
             <RadioButton Content="DarkRide" GroupName="TypeRadioButton" Checked="DarkRide_RadioButton_Checked" Unchecked="DarkRide_RadioButton_Unchecked"/>
             <RadioButton Content="RollerCoaster" GroupName="TypeRadioButton" Checked="RollerCoaster_RadioButton_Checked" Unchecked="RollerCoaster_RadioButton_Unchecked"/>

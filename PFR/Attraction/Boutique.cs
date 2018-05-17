@@ -18,6 +18,7 @@ namespace PFR
         public TypeBoutique Type
         {
             get { return type; }
+            set { type = value; }
         }
 
         #endregion

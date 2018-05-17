@@ -18,7 +18,16 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Background="LightBlue">
-            <Label Style="{StaticResource titleLabelStyle}">Ajout d'un membre dans le personnel</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Background="Transparent" BorderThickness="0" Name="Accueil" Click="Accueil_Click">
+                    <Image Source="Images/accueil.ico" Height="45" Width="45"/>
+                </Button>
+                <Label Grid.Column="1" Style="{StaticResource titleLabelStyle}">Ajout d'un membre dans le personnel</Label>
+            </Grid>
         </Border>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="1" Name="TypeSP">
             <RadioButton Content="Monstre" GroupName="TypeRadioButton" Checked="Monstre_RadioButton_Checked" Unchecked="Monstre_RadioButton_Unchecked"/>

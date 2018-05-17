@@ -75,56 +75,7 @@ namespace PFR
                 }
             }
         }
-
-        public ZombilleniumViewPersonnel(int selection)
-        {
-            InitializeComponent();
-            ChangeDisplay(selection);
-            //typeCB.SelectedItem = 2;
-
-            sorciers = new List<Sorcier>();
-            demons = new List<Demon>();
-            zombies = new List<Zombie>();
-            monstres = new List<Monstre>();
-            vampires = new List<Vampire>();
-            fantomes = new List<Fantome>();
-            loupGarous = new List<LoupGarou>();
-
-            toutLePersonnel = ZombilleniumMenu.Administration.ToutLePersonnel;
-
-            foreach (Personnel personnel in toutLePersonnel)
-            {
-                if (personnel is Sorcier)
-                {
-                    sorciers.Add(personnel as Sorcier);
-                }
-                if (personnel is Demon)
-                {
-                    demons.Add(personnel as Demon);
-                }
-                if (personnel is Zombie)
-                {
-                    zombies.Add(personnel as Zombie);
-                }
-                if (personnel is Monstre)
-                {
-                    monstres.Add(personnel as Monstre);
-                }
-                if (personnel is Vampire)
-                {
-                    vampires.Add(personnel as Vampire);
-                }
-                if (personnel is Fantome)
-                {
-                    fantomes.Add(personnel as Fantome);
-                }
-                if (personnel is LoupGarou)
-                {
-                    loupGarous.Add(personnel as LoupGarou);
-                }
-            }
-        }
-
+        
         #region Loaded Events
 
         private void ToutPersoDG_Loaded(object sender, RoutedEventArgs e)
@@ -231,9 +182,14 @@ namespace PFR
 
         private void ValidationButton_Click(object sender, RoutedEventArgs e)
         {
-            int selection = typeCB.SelectedIndex;
-            ZombilleniumViewPersonnel zombilleniumViewPersonnel = new ZombilleniumViewPersonnel(selection);
+            ZombilleniumViewPersonnel zombilleniumViewPersonnel = new ZombilleniumViewPersonnel();
             this.NavigationService.Navigate(zombilleniumViewPersonnel);
+        }
+
+        private void Accueil_Click(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumMenu zombilleniumMenu = new ZombilleniumMenu();
+            this.NavigationService.Navigate(zombilleniumMenu);
         }
     }
 }

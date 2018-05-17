@@ -18,7 +18,16 @@
         </Grid.RowDefinitions>
 
         <Border Grid.Row="0" Background="LightBlue">
-            <Label Style="{StaticResource titleLabelStyle}">Liste du personnel</Label>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="0" Background="Transparent" BorderThickness="0" Name="Accueil" Click="Accueil_Click">
+                    <Image Source="Images/accueil.ico" Height="45" Width="45"/>
+                </Button>
+                <Label Grid.Column="1" Style="{StaticResource titleLabelStyle}">Liste du personnel</Label>
+            </Grid>
         </Border>
 
         <ComboBox Name="typeCB" Height="40" Grid.Row="1" VerticalAlignment="Top" SelectionChanged="TypeCB_SelectionChanged">
@@ -72,14 +81,14 @@
         <DataGrid Name="ToutPersoDG" Loaded="ToutPersoDG_Loaded" Visibility="Visible">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
-                <DataGridTextColumn Binding="{Binding Tatouage}" Header="Grade" Visibility="Collapsed"/>
-                <DataGridTextColumn Binding="{Binding LesPouvoirs}" Header="Pouvoirs" Visibility="Collapsed"/>
+                <DataGridTextColumn Binding="{Binding Tatouage}" Header="Grade" Visibility="Collapsed" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding LesPouvoirs}" Header="Pouvoirs" Visibility="Collapsed" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Cagnotte}" Header="Cagnotte *" Visibility="Collapsed"/>
-                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" Visibility="Collapsed"/>
+                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" Visibility="Collapsed" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Force}" Header="Force *" Visibility="Collapsed"/>
                 <DataGridTextColumn Binding="{Binding IndiceCruaute}" Header="Cruauté *" Visibility="Collapsed"/>
                 <DataGridTextColumn Binding="{Binding IndiceLuminostie}" Header="Luminosité *" Visibility="Collapsed"/>
@@ -89,81 +98,81 @@
         <DataGrid Name="MonstreDG" Loaded="MonstreDG_Loaded" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
                 <DataGridTextColumn Binding="{Binding Cagnotte}" Header="Cagnotte *"/>
-                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction"/>
+                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="FantomeDG" Loaded="FantomeDG_Loaded">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
                 <DataGridTextColumn Binding="{Binding Cagnotte}" Header="Cagnotte *"/>
-                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction"/>
+                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="DemonDG" Loaded="DemonDG_Loaded">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
                 <DataGridTextColumn Binding="{Binding Cagnotte}" Header="Cagnotte *"/>
-                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction"/>
+                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Force}" Header="Force *"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="LoupGarouDG" Loaded="LoupGarouDG_Loaded">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
                 <DataGridTextColumn Binding="{Binding Cagnotte}" Header="Cagnotte *"/>
-                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction"/>
+                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding IndiceCruaute}" Header="Cruauté *"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="SorcierDG" Loaded="SorcierDG_Loaded">
             <DataGrid.Columns >
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
-                <DataGridTextColumn Binding="{Binding Tatouage}" Header="Grade"/>
-                <DataGridTextColumn Binding="{Binding LesPouvoirs}" Header="Pouvoirs"/>
+                <DataGridTextColumn Binding="{Binding Tatouage}" Header="Grade" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding LesPouvoirs}" Header="Pouvoirs" IsReadOnly="True"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="VampireDG" Loaded="VampireDG_Loaded">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
                 <DataGridTextColumn Binding="{Binding Cagnotte}" Header="Cagnotte *"/>
-                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction"/>
+                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding IndiceLuminosite}" Header="Luminosité*"/>
             </DataGrid.Columns>
         </DataGrid>
         <DataGrid Name="ZombieDG" Loaded="ZombieDG_Loaded">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Matricule}" Header="Matricule" IsReadOnly="True"/>
-                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom"/>
-                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom"/>
-                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe"/>
+                <DataGridTextColumn Binding="{Binding Nom}" Header="Nom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Prenom}" Header="Prénom" IsReadOnly="True"/>
+                <DataGridTextColumn Binding="{Binding Sexe}" Header="Sexe" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding Fonction}" Header="Fonction *"/>
                 <DataGridTextColumn Binding="{Binding Cagnotte}" Header="Cagnotte *"/>
-                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction"/>
+                <DataGridTextColumn Binding="{Binding NomAttraction}" Header="Attraction" IsReadOnly="True"/>
                 <DataGridTextColumn Binding="{Binding DegreDecomposition}" Header="Décomposition *"/>
             </DataGrid.Columns>
         </DataGrid>
