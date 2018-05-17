@@ -85,6 +85,9 @@
     <Compile Include="ZombilleniumMenu.xaml.cs">
       <DependentUpon>ZombilleniumMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ZombilleniumSaveFile.xaml.cs">
+      <DependentUpon>ZombilleniumSaveFile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ZombilleniumViewAttraction.xaml.cs">
       <DependentUpon>ZombilleniumViewAttraction.xaml</DependentUpon>
     </Compile>
@@ -116,6 +119,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ZombilleniumMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ZombilleniumSaveFile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

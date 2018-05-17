@@ -227,43 +227,43 @@ namespace PFR
                 return texte;
         }
 
-        public void AfficherPersonnel()
+        public void AfficherPersonnel(string leNomFichier)
         {
             string texte = "";
             foreach (Personnel element in toutLePersonnel)
             {
-                Console.WriteLine(element.ToString());
+                //Console.WriteLine(element.ToString());
                 texte += element.EcrireFichiercsv() + '\n';
             }
             texte += '\n';
-            EcritureFichier("csv2.csv", texte);
+            EcritureFichier(leNomFichier, texte);
         }
 
-        public void AfficherAttraction()
+        public void AfficherAttraction(string leNomFichier)
         {
             string texte = "";
             foreach (Attraction element in attractions)
             {
-                Console.WriteLine(element.ToString());
+                //Console.WriteLine(element.ToString());
                 texte += element.EcrireFichiercsv() + '\n';
             }
             texte += '\n';
-            EcritureFichier("csv2.csv", texte);
+            EcritureFichier(leNomFichier, texte);
         }
 
-        public void AfficherZombie()
+        public void AfficherZombie(string leNomFichier)
         {
             string texte = "";
             foreach (Personnel element in toutLePersonnel)
             {
                 if (element is Zombie)
                 { 
-                Console.WriteLine(element.Prenom + " " + element.Nom);
+                //Console.WriteLine(element.Prenom + " " + element.Nom);
                 texte += element.EcrireFichiercsv() + '\n';
                 }
             }
             texte += '\n';
-            EcritureFichier("csv2.csv", texte);
+            EcritureFichier(leNomFichier, texte);
         }
 
         public void AjouterPersonnel(Personnel monPersonnel)
@@ -316,7 +316,7 @@ namespace PFR
             {
                 if (element is Demon)
                 {
-                    Console.WriteLine(element);
+                    //Console.WriteLine(element);
                     texte += element.EcrireFichiercsv() + '\n';
                 }
             }
@@ -347,19 +347,19 @@ namespace PFR
             AfficherTitre("PROGRAMME DE DEMO DU LOGICIEL DE GESTION DU PARC ZOMBILLENIUM");
             Console.WriteLine("Demo créée par Jerry TELLE et Johan VAN DER SLOOTEN");
             AfficherTitre("Affichage du personnel");
-            AfficherPersonnel();
+            AfficherPersonnel("csv2.csv");
 
             AfficherTitre("Affichage des attractions");
-            AfficherAttraction();
+            AfficherAttraction("csv2.csv");
 
             AfficherTitre("Creation d'une attraction (Zombarracuda)");
             AjouterAttraction(new RollerCoaster(12, TypeCategorie.assise, 1.20, false, TimeSpan.Parse("0"), new List<Monstre>(), 489, false, "", 2, "Zombarracuda", true, ""));
-            AfficherAttraction();
+            AfficherAttraction("csv2.csv");
 
 
             AfficherTitre("Creation d'un membre du personnel (Martin Dutrou)");
             AjouterPersonnel(new Demon(4, attractions[0], 250, "mécanicien", 6590, "Dutrou", "Martin", TypeSexe.male));
-            AfficherPersonnel();
+            AfficherPersonnel("csv2.csv");
 
             AfficherTitre("Changement de fonction de Martin Dutrou");
             toutLePersonnel[ChercherPersonnel(6590)].ChangementFonction("agent de maintenance");
@@ -368,7 +368,7 @@ namespace PFR
                 + "\n   -Ajout d'un pouvoir pour un sorcier\n   -Changement de l'âge minimum d'un RollerCoaster\n   -Changement d'horaires d'un spectacle\n   -etc...");
 
             AfficherTitre("Affichage de l'ensemble des zombies");
-            AfficherZombie();
+            AfficherZombie("csv2.csv");
             Console.WriteLine("\nPour cet exercice, nous pouvons faire énormement de variantes, comme par exemple :\n   -Affichage de toutes les attractions en maintenance\n   -Affichage des différents types de personnel/attractions"
                 + "\n   -Affichage du personnel sans fonction");
 
@@ -399,9 +399,9 @@ namespace PFR
                 switch (choix)
                 {
                     case 0: break;
-                    case 1: AfficherPersonnel();
+                    case 1: AfficherPersonnel("csv2.csv");
                         break;
-                    case 2: AfficherAttraction();
+                    case 2: AfficherAttraction("csv2.csv");
                         break;
                     case 3:break;//A Ajouter
                     case 4:SortirConsoleElement();

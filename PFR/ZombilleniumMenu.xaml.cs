@@ -51,5 +51,10 @@ namespace PFR
             this.NavigationService.Navigate(zombilleniumAddAttraction);
         }
 
+        private void SortieFichierButton_Click(object sender, RoutedEventArgs e)
+        {
+            ZombilleniumSaveFile zombilleniumSaveFile = new ZombilleniumSaveFile();
+            this.NavigationService.Navigate(zombilleniumSaveFile);
+        }
     }
 }
