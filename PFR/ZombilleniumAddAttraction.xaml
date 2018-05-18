@@ -91,15 +91,17 @@
         <StackPanel Grid.Row="2">
 
             <StackPanel Grid.Row="2" Visibility="Collapsed" Name="DarkrideSP">
+                <Label Style="{StaticResource textBoxLabelStyle}">Durée :</Label>
                 <StackPanel Orientation="Horizontal" Name="durée" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Durée :</Label>
+                    
                     <RadioButton Content="10 " GroupName="GradeRadioButton"/>
                     <RadioButton Content="15 " GroupName="GradeRadioButton"/>
                     <RadioButton Content="30 " GroupName="GradeRadioButton"/>
                     <RadioButton Content="45 "  GroupName="GradeRadioButton"/>
                 </StackPanel>
-                <StackPanel Orientation="Horizontal" Name="Vehicule" HorizontalAlignment="Center">
-                    <Label Style="{StaticResource textBoxLabelStyle}">Vehicule :</Label>
+                <Label Style="{StaticResource textBoxLabelStyle}">Vehicule :</Label>
+                <StackPanel Orientation="Horizontal" Name="voiture" HorizontalAlignment="Center">
+                   
                     <RadioButton Content="oui" GroupName="GradeRadioButton"/>
                     <RadioButton Content="non" GroupName="GradeRadioButton"/>
                 </StackPanel>
@@ -119,7 +121,7 @@
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                     <Label Style="{StaticResource textBoxLabelStyle}">Categorie:</Label>
-                    <ComboBox Name="Categorie" MinWidth="100">
+                    <ComboBox Name="Categorie1" MinWidth="100">
                         <ComboBoxItem> bobsleigh</ComboBoxItem>
                         <ComboBoxItem>assise</ComboBoxItem>
                         <ComboBoxItem>inversee</ComboBoxItem>

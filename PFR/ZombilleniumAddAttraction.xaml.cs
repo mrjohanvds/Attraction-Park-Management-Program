@@ -116,19 +116,36 @@ namespace PFR
 
         public void AjoutDarkRide ()
         {
+            var radios = durée.Children.OfType<RadioButton>();
+            RadioButton checkedRadio = radios.FirstOrDefault(rb => rb.GroupName == "GradeRadioButton" && rb.IsChecked == true);
+            var radios1 = voiture.Children.OfType<RadioButton>(); 
+            RadioButton checkedRadio1 = radios1.FirstOrDefault(rb => rb.GroupName == "GradeRadioButton" && rb.IsChecked == true);
+           bool  Vehicule = bool.Parse(checkedRadio1.Content.ToString());
 
+            ZombilleniumMenu.Administration.AjouterAttraction(new DarkRide(dureeMaintenance,Vehicule,besoinSpecifique,dureeMaintenance,equipe,identifiant,maintenance,natureMaintenance,nbMinMonstre,nom,ouvert,typeDeBesoin));
         }
         public void AjoutRollerCoaster()
         {
-
-        }
+            int ageMinimum = Convert.ToInt32(AgeMin.Text);
+            var radios = RollerCoasterSP.Children.OfType<RadioButton>();
+            RadioButton checkedRadio = radios.FirstOrDefault(rb => rb.GroupName == "GradeRadioButton" && rb.IsChecked == true);
+            TypeCategorie categorie = (TypeCategorie)Enum.Parse(typeof(TypeCategorie), Convert.ToString(checkedRadio.Content).ToLower());
+            int tailleMinimum = Convert.ToInt32(taillemin.Text);
+            ZombilleniumMenu.Administration.AjouterAttraction(new RollerCoaster(ageMinimum, categorie, tailleMinimum, besoinSpecifique, dureeMaintenance, equipe, identifiant, maintenance, natureMaintenance, nbMinMonstre, nom, ouvert, typeDeBesoin));
+    }
         public void AjoutBoutique()
         {
-
+            var radios = BoutiqueSP.Children.OfType<RadioButton>();
+            RadioButton checkedRadio = radios.FirstOrDefault(rb => rb.GroupName == "GradeRadioButton" && rb.IsChecked == true);
+            Type boutique = (Type)Enum.Parse(typeof(Type), Convert.ToString(checkedRadio.Content).ToLower());
+            ZombilleniumMenu.Administration.AjouterAttraction(new Boutique(boutique, besoinSpecifique, dureeMaintenance, equipe, identifiant, maintenance, natureMaintenance, nbMinMonstre, nom, ouvert, typeDeBesoin));
         }
         public void AjoutSpectacle()
         {
-
+            int nombredePlace = Convert.ToInt32(Nombredeplace.Text);
+            string nomsalle = NomSalle.Text;
+            string horaire = Horaire.Text;
+            ZombilleniumMenu.Administration.AjouterAttraction(new Spectacle(horaire, nombredePlace, nomsalle, besoinSpecifique, dureeMaintenance, equipe, identifiant, maintenance, natureMaintenance, nbMinMonstre, nom, ouvert, typeDeBesoin));
         }
 
         private void Accueil_Click(object sender, RoutedEventArgs e)
