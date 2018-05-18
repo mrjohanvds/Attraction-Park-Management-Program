@@ -137,14 +137,20 @@ namespace PFR
         {
             var radios = BoutiqueSP.Children.OfType<RadioButton>();
             RadioButton checkedRadio = radios.FirstOrDefault(rb => rb.GroupName == "GradeRadioButton" && rb.IsChecked == true);
-            Type boutique = (Type)Enum.Parse(typeof(Type), Convert.ToString(checkedRadio.Content).ToLower());
+            TypeBoutique boutique = (TypeBoutique)Enum.Parse(typeof(Type), Convert.ToString(checkedRadio.Content).ToLower());
             ZombilleniumMenu.Administration.AjouterAttraction(new Boutique(boutique, besoinSpecifique, dureeMaintenance, equipe, identifiant, maintenance, natureMaintenance, nbMinMonstre, nom, ouvert, typeDeBesoin));
         }
         public void AjoutSpectacle()
         {
             int nombredePlace = Convert.ToInt32(Nombredeplace.Text);
             string nomsalle = NomSalle.Text;
-            string horaire = Horaire.Text;
+            List <DateTime> horaire = new List<DateTime>();
+               string h=  Horaire.Text;
+            string[] t = h.Split(',');
+            foreach (string a in t )
+            {
+                horaire.Add(Convert.ToDateTime(h));
+            }
             ZombilleniumMenu.Administration.AjouterAttraction(new Spectacle(horaire, nombredePlace, nomsalle, besoinSpecifique, dureeMaintenance, equipe, identifiant, maintenance, natureMaintenance, nbMinMonstre, nom, ouvert, typeDeBesoin));
         }
 

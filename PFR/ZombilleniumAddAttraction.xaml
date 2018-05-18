@@ -34,6 +34,7 @@
             <RadioButton Content="DarkRide" GroupName="TypeRadioButton" Checked="DarkRide_RadioButton_Checked" Unchecked="DarkRide_RadioButton_Unchecked"/>
             <RadioButton Content="RollerCoaster" GroupName="TypeRadioButton" Checked="RollerCoaster_RadioButton_Checked" Unchecked="RollerCoaster_RadioButton_Unchecked"/>
             <RadioButton Content="Spectacle" GroupName="TypeRadioButton" Checked="Spectacle_RadioButton_Checked" Unchecked="Spectacle_RadioButton_Unchecked"/>
+            <RadioButton Content="Boutique" GroupName="TypeRadioButton" Checked="Boutique_RadioButton_Checked" Unchecked="Boutique_RadioButton_Unchecked"/>
         </StackPanel>
 
         <Grid Margin="30,2,10,20" Grid.Row="3" Name="InfosGeneralesGrid">
